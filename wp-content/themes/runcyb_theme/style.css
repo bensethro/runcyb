@@ -499,7 +499,7 @@ a:hover.circle1, a:hover.circle2,a:hover.circle3 {
 	margin:-350px auto 0 auto;
 	position:relative;
 	align:centre;
-	z-index:35;
+	z-index:12;
 }
 
 
@@ -990,7 +990,7 @@ a.article-wrap p {
 		font-size: 15px;
 	font-weight: 300;
 	color:#000000;
-	margin: 5px 0	;
+	margin: 5px 0	20px 0;
 	}
 	
 a:hover.article-wrap h5 {

@@ -5,13 +5,9 @@ Template Name: news
 
 get_header(); ?>
 
-<!--<section role="main">
 
-  <img src="<?php bloginfo('template_url'); ?>/img/topimage_sm.png" />
 
-</section>-->
-
-<section role="main" class="site-content pushdown">
+<section role="main" class="site-content latest">
   <div class="container">
   <div class="grid-row col-4">
 
@@ -33,6 +29,19 @@ the_post_thumbnail("medium");
           <?php the_excerpt()?>
         
         </p>
+        	<p class="category"> 
+		 <?php
+			$categories = get_the_category();
+
+			$output = '';
+			if($categories){
+				foreach($categories as $category) {
+					$output.='<span>'.$category->cat_name.'</span>';
+				}
+			echo trim($output);
+			}
+			?>
+</p>
       </a></div>
 
     <?php endwhile; ?>
@@ -45,13 +54,7 @@ the_post_thumbnail("medium");
     <?php endif; ?>
 
 </div>
- 
- <!-- <div class="grid-unit right">
-<?php /*?>  <?php get_sidebar( 'top sidebar' ); ?>
-<?php get_sidebar( 'posts' ); ?><?php */?>
-  </div></div>
--->
- 
+
   </div>
 </section>
 <?php get_footer(); ?>

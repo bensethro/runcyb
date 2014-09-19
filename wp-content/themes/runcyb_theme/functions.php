@@ -21,7 +21,7 @@ if ( function_exists( 'add_image_size' ) ) {
 
 if ( function_exists( 'add_theme_support' ) ) {
 	add_theme_support( 'post-thumbnails' );
-        set_post_thumbnail_size( 800, 800 ); // default Post Thumbnail dimensions   
+        set_post_thumbnail_size( 800, 600 ); // default Post Thumbnail dimensions   
 }
 
 if ( function_exists( 'add_image_size' ) ) { 
@@ -79,7 +79,7 @@ if (function_exists('register_sidebar')) {
 function custom_excerpt_length( $length ) {
 	return 20;
 }
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'custom_excerpt_length', 100 );
 
 
 add_image_size( 'event-logo', 300, 100, true ); //  hard crop mode

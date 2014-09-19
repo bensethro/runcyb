@@ -11,16 +11,15 @@ MultiEdit: intro,promo
 <section id="hpslider">
   <div class="flexslider">
     <ul class="slides">
-      <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_runner3.jpg" class="fade-image"//>
+      <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_runner2.jpg" class="fade-image"//>
         <div class="container">
           <div class="flex-caption">
             <h1>Run. Coed y Brenin</h1>
             <h2>the UK’s first bespoke trail running centre.</h2>
-            <p><a href="">Trail running shop</a><a href="">Footwear & pack demo centre</a><a href="">Running Trails</a> </p>
-          </div>
+ </div>
         </div>
       </li>
-      <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_runner2.jpg" class="fade-image"/>
+     <!-- <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_runner3.jpg" class="fade-image"/>
         <div class="container">
           <div class="flex-caption">
             <h1>Way marked running Trails</h1>
@@ -28,7 +27,7 @@ MultiEdit: intro,promo
             <p><a href="">10k</a><a href="">Half Marathon</a><a href="">Full Marathon</a></p>
           </div>
         </div>
-      </li>
+      </li>-->
       
      
       
@@ -39,55 +38,74 @@ MultiEdit: intro,promo
 
 
 
-<!--<section class="site-content site-banners">
+<section class="site-content site-banners">
+
   <div class="container">
-    <div class="grid-row col-3 ">
-
-      <div class="grid-unit">
-        <a href="/bike-hire" class="homebanner">
-          <img src="<?php bloginfo('template_url'); ?>/img/hirepic.jpg" /> 
-          <h2>Bike Hire</h2>
-          <p>Kids, Hard tail, Full Suspension &amp; Demo bikes</p>
+  
+  
+  <div class="circles">  
+      <div class="circle_container">
+          <div class="circle">
+          
+            <a href="/bike-hire" class="circle1">
+         
+          <h2>TRAIL RUNNING STORE</h2>
+        
         </a>
-       </div>
-
-      <div class="grid-unit">
-        <a href="/trails" class="homebanner">
-          <img src="<?php bloginfo('template_url'); ?>/img/trailpic.jpg" />
-          <h2>Trails &amp; Maps</h2>
-          <p>Epic graded trail network plus Skills &amp; training area</p>
+          </div>
+      </div>  
+      <div class="circle_container">
+          <div class="circle">
+             <a href="/trails" class="circle2">
+         
+          <h2>FOOTWEAR & PACK DEMO CENTRE</h2>
+          
         </a>
-      </div>
-
-      <div class="grid-unit">
-        <a href="/shop" class="homebanner small">
-          <img src="<?php bloginfo('template_url'); ?>/img/shoppic.jpg" />
-          <h2>The Shop</h2>
-          <p>Bikes, kit &amp; workshop</p>
+            
+          </div>
+      </div> 
+      <div class="circle_container">
+          <div class="circle">
+          
+            <a href="/shop" class="circle3">
+          <h2>COED Y BRENIN & THE WAYMARKED TRAILS</h2>
+          
         </a>
-        <a href="/visitor-centre"  class="homebanner small">
-          <img src="<?php bloginfo('template_url'); ?>/img/centrepic.jpg" />
-          <h2>Visitor Centre</h2>
-          <p>Facilities &amp; activities</p>
-        </a>
-      </div>
+          </div>
+      </div>    
+   
+</div>
 
-    </div>
+
+
+
   </div>
-</section>-->
+</section>
 
 <section role="main" class="site-content intro">
   <div class="container">
     <div class="grid-row col-2">
-      <div class="grid-unit left">
+      <div class="grid-unit ">
         <?php multieditDisplay('intro'); ?>
       </div>
-      <div class="grid-unit right">
+      <div class="grid-unit events">
+      <h2>Run. Events</h2>
+      <div><a href=""  class="event"><img src="<?php bloginfo('template_url'); ?>/img/slide_runner2.jpg" /><p>title - date</p></a>
+      </div>
+      <div><a href=""  class="event"><img src="<?php bloginfo('template_url'); ?>/img/slide_runner2.jpg" /><p>title - date</p></a>
+      </div>
+      <div><a href=""  class="event"><img src="<?php bloginfo('template_url'); ?>/img/slide_runner2.jpg" /><p>title - date</p></a>
+      </div>
         <?php multieditDisplay('promo'); ?>
       </div>
     </div>
   </div>
-</section>	
+</section>	  
+
+    
+
+
+
 
 
 <section role="main" class="site-content latest">
@@ -99,18 +117,29 @@ MultiEdit: intro,promo
       
       <!--start posts-->
       
-     <div class="grid-unit"> <a href="<?php the_permalink() ?>" class=" article-wrap">
-        <?php
-the_post_thumbnail("medium");
-?>
+     <div class="grid-unit">
+     	<a href="<?php the_permalink() ?>" class="article-wrap">
+     	<?php the_post_thumbnail("medium");?>
        
-        <h5>
-          <?php the_title()?>
-          </h5>
-          <p>
-          <?php the_excerpt()?>
-          </p>
-      </a></div>
+       <h5><?php the_title()?></h5>
+       <p><?php the_excerpt()?></p>
+
+		<p class="category"> 
+		 <?php
+			$categories = get_the_category();
+
+			$output = '';
+			if($categories){
+				foreach($categories as $category) {
+					$output.='<span>'.$category->cat_name.'</span>';
+				}
+			echo trim($output);
+			}
+			?>
+</p>
+
+</a>
+      </div>
       <?php endwhile; ?>
     </div>
    

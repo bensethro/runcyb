@@ -13,17 +13,16 @@ MultiEdit: intro,Promo,brands
       <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_shop.jpg" />
         <div class="container">
           <div class="flex-caption">
-            <h1>Shop
-            </h1>
-            <p>Jill H - Liverpool</p>
+            <h1>Run. trail running shop </h1>
+            <h2>Stocked with leading brands. Footwear, Apperal & Accessories</h2>
           </div>
         </div>
       </li>
       <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_shop2.jpg" />
         <div class="container">
           <div class="flex-caption">
-            <h1>shop</h1>
-            <p>Rob E - London </p>
+           <h1>Run. trail running shop </h1>
+            <h2>Stocked with leading brands. Footwear, Apperal & Accessories</h2>
           </div>
         </div>
       </li>
@@ -36,20 +35,44 @@ MultiEdit: intro,Promo,brands
 </section>
 
 
+<section role="main" class="site-content gallery">
 
+  <div class="grid-row col-4">
+      <div class="grid-unit gallery-image"><img src="<?php bloginfo('template_url'); ?>/img/gallery_1.jpg" />
+      </div>
+  
+      <div class="grid-unit gallery-image"><img src="<?php bloginfo('template_url'); ?>/img/gallery_2.jpg" />
+      </div>
+   
+      <div class="grid-unit gallery-image"><img src="<?php bloginfo('template_url'); ?>/img/gallery_3.jpg" />
+      </div>
+   
+      <div class="grid-unit gallery-image"><img src="<?php bloginfo('template_url'); ?>/img/gallery_4.jpg" />
+      </div>
+       
+   
+     
+   </div>
+ 
+</section>
+<section role="main" class="site-content"><div class="brands"></div>
+</section>
 
 <section role="main" class="site-content intro">
   <div class="container">
-  <div class="grid-row col-4">
-    <div class="grid-unit">
-<?php multieditDisplay('intro'); ?>
-    
+    <div class="grid-row col-2">
+      <div class="grid-unit ">
+        <?php multieditDisplay('intro'); ?>
+      </div>
+      <div class="grid-unit">
+      <img src="<?php bloginfo('template_url'); ?>/img/tempimages.png" />
+     
+      </div>
     </div>
-  </div> 
- 
-  </div>    
+  </div>
+</section>	  
 
-</section>
+	 
 
 
 <section role="main" class="site-content latest">
@@ -61,22 +84,40 @@ MultiEdit: intro,Promo,brands
       
       <!--start posts-->
       
-      <div class="grid-unit article-image"><a href="<?php the_permalink() ?>">
-        <?php if ( has_post_thumbnail() ) { the_post_thumbnail( '' ); } ?>
-        </a>
-        <h5><a href="<?php the_permalink() ?>">
-          <?php the_title()?>
-          </a></h5>
+       <div class="grid-unit">
+     	<a href="<?php the_permalink() ?>" class="article-wrap">
+     	<?php the_post_thumbnail("medium");?>
+       
+       <h5><?php the_title()?></h5>
+       <p><?php the_excerpt()?></p>
+
+		<p class="category"> 
+		 <?php
+			$categories = get_the_category();
+
+			$output = '';
+			if($categories){
+				foreach($categories as $category) {
+					$output.='<span>'.$category->cat_name.'</span>';
+				}
+			echo trim($output);
+			}
+			?>
+</p>
+
+</a>
       </div>
+      
+      
       <?php endwhile; ?>
     </div>
     <?php
                 $category = get_the_category();
-                echo '<a href="'.get_category_link($category[0]->cat_ID).'">View all posts for: ' . $category[0]->cat_name . '</a>';
+                echo '<a href="'.get_category_link($category[0]->cat_ID).'" class=more>More' . '</a>';
             ?>
     <?php wp_reset_query(); ?>
     
-    <!--end posts-->
+    <!--end posts --> 
     
     <?php else : ?>
     <?php endif; ?>
@@ -87,11 +128,7 @@ MultiEdit: intro,Promo,brands
 </section>  
 
 
-<section role="main" class="site-content gallery">
-  <div class="container">
-Gallery
-  </div>
-</section>
+
 
 <section role="main" class="site-content testimonials">
   <div class="container">

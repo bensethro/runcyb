@@ -173,6 +173,7 @@ img, video {
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
 	transition: all 0.5s;
+	margin-right:200px;
 }
 
 a:hover .logo {
@@ -203,7 +204,7 @@ a:hover .logo {
 }
 
 .site-header .nav ul li a {
-		text-transform:capitalize !important;
+	text-transform: uppercase;
 	margin: 0 0 0 15px;
 	font-size: 14px;
 	font-weight: 700;
@@ -330,14 +331,15 @@ section {
 
 .site-content.intro {
 	background: #ffffff;
+	padding: 0px 0 40px 0;
 }
 
-.site-content.sponsors {
+/*.site-content.sponsors {
 	background: #fff;
 	margin:0;
 	border-bottom: solid #A3A3A3 1px;
 	
-}
+}*/
 
 .fixed {
     position: fixed; 
@@ -351,14 +353,30 @@ section {
 }
 
 .site-content.latest {
-	background: #EFEFEF;padding: 100px 0;
+	background: #EFEFEF;
+	padding: 50px 0;
+	border-top:10px solid #D9D9D9;
+	border-bottom:10px solid #D9D9D9;
 }
+
 
 .site-content.gallery {
 	background: #ffffff;
+	padding: 1px 0;
 }
 .site-content.testimonials {
 	background: #cccccc;
+}
+
+.site-banners {
+	background: none;
+	margin-top: -160px;
+	padding: 0px 0;
+	
+		
+}
+.site-content.post {
+	padding: 40px 24%;
 }
 
 
@@ -409,64 +427,111 @@ section {
 }
 
 
-/* Homepage Banners
+/* Homepage Circle Banners
 -------------------------------------------------------------- */
 
-.homebanner {
-	position: relative;
-	z-index: 1;
-	float: left;
-	background: #000;
-	transition: all .5s ease-out;
-    -moz-transition: all .5s ease-out;
-    -webkit-transition: all .5s ease-out;
-    -o-transition: all .5s ease-out;
-	width:100%;
+.circle_container{
+    float:left;
+    position: relative;
+    width: 22%;
+    margin:6%;
+	z-index:28;
 }
-
-.homebanner:hover {
-	background: #136431;
-}
-
-.homebanner h2 {
-	color: #fff;
-	font-size: 18px;
-	margin: 10px 15px 3px;
-}
-
-.homebanner p {
-	color: #fff;
-	font-size: 12px;
-	margin: 0 15px 15px;
-}
-
-.homebanner.small {
-	width: 47%;
-	margin-right:6%;
-}
-
-.homebanner.small:last-child{
+.circle_container:last-child{
 	margin-right:0;
 }
 
-.homebanner img {
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
+.circle {
+    margin-top: 100%
 }
 
-.homebanner:hover img {
-	opacity: 0.7;
-	transition: all .5s ease-out;
-    -moz-transition: all .5s ease-out;
-    -webkit-transition: all .5s ease-out;
-    -o-transition: all .5s ease-out;
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
+a.circle1, a.circle2,a.circle3 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #A8D024;
+    border-radius: 50%;
+	border:1px solid #ffffff;
+
+}
+
+a.circle1{
+   background: #11331B url(img/homecircle_shop.jpg) no-repeat top;
+
+}
+a.circle2{
+   background: #11331B url(img/homecircle_demo.jpg) no-repeat top;
+
+}
+a.circle3{
+   background: #11331B url(img/homecircle_trails.jpg) no-repeat top;
+
+}
+
+a:hover.circle1, a:hover.circle2,a:hover.circle3 {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #A8D024;
+    border-radius: 50%;
 }
 
 
 
+.circle h2 {
+	color: #fff;
+	font-size: 17px;
+	margin: 45% 15px ;
+	text-align:center;
+}
 
+
+/* Shop template 
+-------------------------------------------------------------- */
+.brands {
+	background: #ffffff;
+	height: 100px;
+	width:70%;
+	margin:-350px auto 0 auto;
+	position:relative;
+	align:centre;
+	z-index:35;
+}
+
+
+/* Home events listing 
+-------------------------------------------------------------- */
+
+.events{}
+
+.events a.event{
+	width:100%;
+	border:none;
+	display:block;
+	float:left;	
+	border:solid 1px #ffffff;
+	margin-bottom:12px;
+	padding:10px;
+	}
+.events a.event img{
+	height:50px;
+	float:left;
+
+	}
+.events a.event p{
+	float:left;
+
+	}
+	
+.events a:hover.event{
+	width:100%;
+	border:solid 1px #00AFE3;
+	}
+	
 
 /* Right Column
 -------------------------------------------------------------- */
@@ -654,7 +719,7 @@ a:hover {
 h1 {
 	
 	font-weight: 700;
-	font-size: 40px;
+	font-size: 50px;
 	line-height: 50px;
 	margin:20px 0 20px 0;
 }
@@ -678,8 +743,9 @@ h3 {
 }
 
 
-.shopinfo h3 {
-	margin-top: 0px;
+.intro h1,h2,h3,h4 {
+	font-size: 25px;
+	line-height: 30px;
 } 
 
 h3 a:hover {
@@ -845,8 +911,10 @@ hr {
 .feature {
 	margin: 0 0 20px 0;
 
-	height: 350px;
-	  background-size: cover;
+	height: 600px;
+	  background-size: contain;
+	  
+	  width:100%;
 }
 
 img.alignleft {
@@ -867,41 +935,44 @@ img.alignright {
 a.article-wrap
 { 
 	float:left;
-	border:solid #eeeeee 5px;display:inline; margin:0 0 50px 0;
-background: #eeeeee url(img/icon_expand_lt.png) no-repeat bottom;
+	border:solid #eeeeee 3px;
+	display:inline; 
+	margin:0 0 50px 0;
+background: #eeeeee;
 	min-height:400px;
+	padding:8px;
 
 	
 	}
-	
-/*a.article-wrap:after
-{ 
-	background: #eeeeee url(img/icon_expand_lt.png) no-repeat bottom;
-	display:block;
-    position:relative;
-	height:20px;
-	width:100%;
-	}*/
-	
+
 a:hover.article-wrap
 { 
 	float:left;
-	border:solid #000000 5px;display:inline;width:100%;
-	background: #000000 url(img/icon_expand.png) no-repeat bottom;
+	border:solid #00B6EB 3px;
+	display:inline;width:100%;
+	background: #05BFF3;
 	}
 	
-/*a.article-wrap:after
-{ 
-	
-	background: url(img/icon_expand.png) no-repeat bottom;
-	display:block;
-       position:relative;
-	}*/
 
 .article-image {
 	float:left;
 	
 
+	
+}
+
+.article-wrap span {
+	background: #fff; 
+	font-size: 12px;
+	font-weight: 300;
+	color:#000000;
+	margin-right:5px;
+	text-transform: uppercase;
+	padding: 3px;
+}
+
+.article-wrap:hover span {
+	color:#000;
 	
 }
 
@@ -911,37 +982,39 @@ a:hover.article-wrap
 }
 a.article-wrap h5 {
 	font-size: 20px;
-	font-weight: 500;
+	font-weight: 700;
 	color:#000000;
 	margin: 10px 0	;
 }
 a.article-wrap p {
-		font-size: 14px;
-	font-weight: 200;
+		font-size: 15px;
+	font-weight: 300;
 	color:#000000;
 	margin: 5px 0	;
 	}
 	
 a:hover.article-wrap h5 {
-	font-size: 20px;
-	font-weight: 500;
+	
 	color:#fff;
 }
 a:hover.article-wrap p {
-		font-size: 14px;
-	font-weight: 200;
+
 	color:#fff;
 	}
 	
-a.archivebutton{
-	float:none; display:block;padding:0 5 0 5;border:solid 1px #000000;}
+a.more{
+	float:none; 
+	display:block;
+	padding:0 5px;
+	border:1px solid #000000; 
+	width:100px; 
+	height:100px; 
+	border-radius:50%;}
 	
-/*.article-image img:hover {
-	opacity: 0.6;
+a.more:hover{
+	border:1px solid #999999;}
+	
 
-
-
-}*/
 
 /* Gallery Images
 -------------------------------------------------------------- */
@@ -951,14 +1024,18 @@ a.archivebutton{
 	background: #fff;
 	float:left;
 	overflow:hidden;
-
+border-right:1px solid #ffffff;
 	
 }
 
 .gallery-image img {
 	float: left;
 	display: inline;
+	
+}
+.gallery-image:last-child {
 
+	border-right:none;
 }
 
 .gallery-image img:hover {

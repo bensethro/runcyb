@@ -698,7 +698,7 @@ aside.boxfb {
 /* Links 
 -------------------------------------------------------------- */
 a {
-	color: #333;
+	color: #93c01e;
 	text-decoration: none;
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
@@ -707,7 +707,8 @@ a {
 }
 
 a:hover {
-	color: #80bd01;
+	/*color: #80bd01;*/
+	text-decoration: underline;
 }
 
 
@@ -1122,7 +1123,294 @@ input.btn:hover {
 }
 
 
+/* Twitter Feed
+-------------------------------------------------------------- */
 
+.twitterfeed {
+	background: #f2f2f2;
+}
+
+.twitterfeed ul {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.twitterfeed ul li {
+  list-style: none;
+  overflow: hidden;
+  float: left;
+  display: inline;
+  width: 25%;
+  background: #fff;
+  padding: 40px 0;
+
+  		    box-sizing: border-box;
+  	 -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+
+  border-right: 1px solid #e4e7e9;
+}
+
+.twitterfeed ul li:nth-of-type(4n) {
+  margin-right: 0;
+}
+
+.twitterfeed ul li:hover {
+  background: #fafafa;
+}
+
+.user {
+  width: auto;
+  margin: 0 auto 20px;
+  text-align: center;
+  overflow: hidden;
+  display: block;
+  font-size: 13px;
+}
+
+.user span {
+	display: block;
+	margin-bottom: 7px;
+}
+
+.user span span {
+	font-size: 16px;
+}
+
+.user a > span span {
+	color: #545c63;
+}
+
+.user img {
+	display: block;
+  border-radius: 100px;
+  border: 1px solid #e4e7e9;
+  padding: 5px;
+  background: #fff;
+  margin-bottom: 15px;
+
+  		 -moz-border-radius: 100px
+	-webkit-border-radius: 100px;
+}
+
+.tweet {
+  text-align: center;
+  line-height: 1.7;
+  font-size: 18px;
+  width: 76%;
+  margin: auto;
+  overflow: hidden;
+  height: 125px;
+}
+
+.tweet a, .tweet a:hover {
+	background: none;
+	color: #93c01e;
+}
+
+.tweet a:hover {
+	text-decoration: underline;
+}
+
+.timePosted {
+  width:50%;
+  padding-left: 20px;
+}
+
+
+
+.user a {
+/* width: 100px;*/
+}
+
+.user span span {
+
+/*  display:block;
+  margin-top:10px;*/
+  clear: left;
+}
+
+.user img, .user a > span {
+/*  float:left;*/
+}
+
+.interact {
+  float:left;
+  width:auto;
+  float: right;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.interact a {
+  margin-left:5px;
+  float:left;
+  display: inline;
+}
+
+.user a > span {
+  margin-left:10px;
+  clear: left;
+}
+
+.media img {
+  max-width:250px;
+  max-height:250px;
+  display: block;
+}
+
+#linkage {
+  position:fixed;
+  top:0px;
+  right:0px;
+  background-color:#3d3d3d;
+  color:#ffffff;
+  text-decoration:none;
+  padding:5px;
+  width:10%;
+  font-family:arial;
+}
+
+/* Instagram Feed
+-------------------------------------------------------------- */
+
+.instagramfeed ul {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.instagramfeed ul li {
+  list-style: none;
+  overflow: hidden;
+  float: left;
+  display: inline;
+  width: 7.69%;
+  background: #fff;
+  padding: 0;
+}
+
+.instagramfeed ul li img {
+	width: 100%;
+}
+
+
+.twitterfeed ul li:hover {
+  background: #fafafa;
+}
+
+.user {
+  width: auto;
+  margin: 0 auto 20px;
+  text-align: center;
+  overflow: hidden;
+  display: block;
+  font-size: 13px;
+}
+
+.user span {
+	display: block;
+	margin-bottom: 7px;
+}
+
+.user span span {
+	font-size: 16px;
+}
+
+.user a > span span {
+	color: #545c63;
+}
+
+.user img {
+	display: block;
+  border-radius: 100px;
+  border: 1px solid #e4e7e9;
+  padding: 5px;
+  background: #fff;
+  margin-bottom: 15px;
+
+  		 -moz-border-radius: 100px
+	-webkit-border-radius: 100px;
+}
+
+.tweet {
+  text-align: center;
+  line-height: 1.7;
+  font-size: 18px;
+  width: 76%;
+  margin: auto;
+  overflow: hidden;
+  height: 125px;
+}
+
+.tweet a, .tweet a:hover {
+	background: none;
+	color: #93c01e;
+}
+
+.tweet a:hover {
+	text-decoration: underline;
+}
+
+.timePosted {
+  width:50%;
+  padding-left: 20px;
+}
+
+
+
+.user a {
+/* width: 100px;*/
+}
+
+.user span span {
+
+/*  display:block;
+  margin-top:10px;*/
+  clear: left;
+}
+
+.user img, .user a > span {
+/*  float:left;*/
+}
+
+.interact {
+  float:left;
+  width:auto;
+  float: right;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.interact a {
+  margin-left:5px;
+  float:left;
+  display: inline;
+}
+
+.user a > span {
+  margin-left:10px;
+  clear: left;
+}
+
+.media img {
+  max-width:250px;
+  max-height:250px;
+  display: block;
+}
+
+#linkage {
+  position:fixed;
+  top:0px;
+  right:0px;
+  background-color:#3d3d3d;
+  color:#ffffff;
+  text-decoration:none;
+  padding:5px;
+  width:10%;
+  font-family:arial;
+}
 
 
 

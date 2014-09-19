@@ -16,6 +16,9 @@
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/retina.js"></script> 
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/scripts.js"></script> 
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/jquery.sticky.js"></script> 
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/twitterFetcher_min.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/twitter.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/instafeed.min.js"></script>
 
 <!-- jQuery --> 
 <!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -31,4 +34,20 @@
     });
   });
 </script>
+
+
+<!-- Instagram Feed -->
+
+<script type="text/javascript">
+  var feed = new Instafeed({
+      get: 'tagged',
+      tagName: 'bmwz3',
+      clientId: '8dab5fb6ee504fd9bbfce2a2302f6ea2',
+      limit: '13',
+      template: '<li><a href="{{link}}" target="_blank"><img src="{{image}}" /></a></li>'
+  });
+  feed.run();
+</script>
+
+
 </body>

@@ -155,6 +155,14 @@ MultiEdit: intro,promo
   </div>
 </section>
 
+
+<section class="socialfeed">
+
+    <div id="instgram" class="instagramfeed"><ul id="instafeed"></ul></div>
+    <div id="twitter" class="twitterfeed"></div>
+
+</section>
+
 <section role="main" class="site-content gallery">
   <div class="container">
 Gallery

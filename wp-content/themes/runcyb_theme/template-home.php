@@ -8,10 +8,10 @@ MultiEdit: intro,promo
 
 
 
-<section id="hpslider">
+<section id="hpslider" class="line-home">
   <div class="flexslider">
     <ul class="slides">
-      <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_runner2.jpg" class="fade-image"//>
+      <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_runner2.jpg" class="fade-image"/>
         <div class="container">
           <div class="flex-caption">
             <h1>Run. Coed y Brenin</h1>
@@ -86,18 +86,50 @@ MultiEdit: intro,promo
   <div class="container">
     <div class="grid-row col-2">
       <div class="grid-unit ">
-        <?php multieditDisplay('intro'); ?>
+	  <?php if (have_posts()) : ?>
+        <?php while (have_posts()) : the_post(); ?> 
+      
+        
+        <?php the_content(); ?>
+        
+         <?php wp_reset_query(); ?>
+        <?php endwhile; ?>
+<?php endif; ?> 
       </div>
-      <div class="grid-unit events">
+<div class="grid-unit events">
       <h2>Run. Events</h2>
-      <div><a href=""  class="event"><img src="<?php bloginfo('template_url'); ?>/img/slide_runner2.jpg" /><p>title - date</p></a>
-      </div>
-      <div><a href=""  class="event"><img src="<?php bloginfo('template_url'); ?>/img/slide_runner2.jpg" /><p>title - date</p></a>
-      </div>
-      <div><a href=""  class="event"><img src="<?php bloginfo('template_url'); ?>/img/slide_runner2.jpg" /><p>title - date</p></a>
-      </div>
-        <?php multieditDisplay('promo'); ?>
-      </div>
+  
+      
+      
+        <?php query_posts('id=13&orderby=rand&showposts=8'); ?>
+    
+      <?php if (have_posts()) :?>
+      <?php while (have_posts()): the_post(); ?>
+      
+      <!--start posts-->
+      
+   
+     	<a href="<?php the_permalink() ?>" class="event">
+     	<?php the_post_thumbnail("event-logo");?>
+        
+       
+       <h5><?php the_title()?></h5>
+       <p><?php the_excerpt()?></p>
+
+		</a>
+      <?php endwhile; ?>
+    
+   
+   
+    <?php wp_reset_query(); ?>
+    
+    <!--end posts-->
+    
+    <?php else : ?>
+    <?php endif; ?>
+    
+    
+    </div>
     </div>
   </div>
 </section>	  
@@ -142,6 +174,10 @@ MultiEdit: intro,promo
       </div>
       <?php endwhile; ?>
     </div>
+     <div class="more"><?php
+                $category = get_the_category();
+                echo '<a href="'.get_category_link($category[0]->cat_ID).'" >MORE</a>';?>
+                </div>
    
     <?php wp_reset_query(); ?>
     
@@ -163,11 +199,7 @@ MultiEdit: intro,promo
 
 </section>
 
-<section role="main" class="site-content gallery">
-  <div class="container">
-Gallery
-  </div>
-</section>
+
 <?php if(function_exists('show_flexslider_rotator')) echo show_flexslider_rotator( 'homepage	' ); ?>
 
 

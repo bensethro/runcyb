@@ -1,16 +1,16 @@
 <?php
 /*
 Template Name: wintertrail
-MultiEdit: intro,Promo
+MultiEdit: intromessage,eventdate,eventregistration
 */
 ?>
 <?php get_header(); ?>
 
 
-<section id="hpslider">
+<section id="hpslider" class="line-wintertrail">
   <div class="flexslider">
     <ul class="slides">
-      <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_winter.jpg" />
+     <!-- <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_winter.jpg" />
         <div class="container">
           <div class="flex-caption">
             <h1>winter event
@@ -18,17 +18,23 @@ MultiEdit: intro,Promo
             <p>Jill H - Liverpool</p>
           </div>
         </div>
-      </li>
+      </li>-->
       <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_winter2.jpg" />
-        <div class="container">
-          <div class="flex-caption">
-            <h1>winter event</h1>
-            <p>Rob E - London </p>
-          </div>
-        </div>
-      </li>
       
+       
+        
+    
+      
+      <div class="flex-caption"> <div class="container">
+            <div class="grid-row col-2">
+      <div class="grid-unit"><img src="<?php bloginfo('template_url'); ?>/img/logo_wintertrail_wt.png" /></div>
      
+      <div class="grid-unit"><h3><?php echo strip_tags(multieditDisplay('intromessage', true)); ?></h3>
+            </div></div>
+          </div>
+          </div>
+      
+       </li>
       
     </ul>
   </div>
@@ -36,15 +42,15 @@ MultiEdit: intro,Promo
 </section>
 
 <article>
-<section role="main" class="site-content sponsors">
+<section role="main" class="site-content eventheader">
 
   <div class="container">
     <div class="grid-row col-2">
-      <div class="grid-unit left">
-        REGISTRATION OPENS IN 22 DAYS
+      <div class="grid-unit">
+        <h2><?php echo strip_tags(multieditDisplay('eventdate', true)); ?></h2>
       </div>
-      <div class="grid-unit right">
-      big buttons to register here
+      <div class="grid-unit">
+      <h3><?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></h3><a href="+" class="register">Register now</a>
       </div>
     </div>
   </div>
@@ -57,7 +63,15 @@ MultiEdit: intro,Promo
   <div class="container">
   <div class="grid-row col-4">
     <div class="grid-unit">
-<?php multieditDisplay('intro'); ?>
+       <?php if (have_posts()) : ?>
+        <?php while (have_posts()) : the_post(); ?> 
+      
+        <h1><?php the_title(); ?></h1>
+        <?php the_content(); ?>
+        
+         <?php wp_reset_query(); ?>
+        <?php endwhile; ?>
+<?php endif; ?> 
     
     </div>
   </div> 
@@ -88,13 +102,29 @@ the_post_thumbnail("medium");
           <p>
           <?php the_excerpt()?>
           </p>
+          <p class="category"> 
+		 <?php
+			$categories = get_the_category();
+
+			$output = '';
+			if($categories){
+				foreach($categories as $category) {
+					$output.='<span>'.$category->cat_name.'</span>';
+				}
+			echo trim($output);
+			}
+			?>
+</p>
+
       </a></div>
       <?php endwhile; ?>
     </div>
-    <?php
+    
+   
+    <div class="more"><?php
                 $category = get_the_category();
-                echo '<a href="'.get_category_link($category[0]->cat_ID).'">View all posts for: ' . $category[0]->cat_name . '</a>';
-            ?>
+                echo '<a href="'.get_category_link($category[0]->cat_ID).'" >MORE</a>';?>
+                </div>
     <?php wp_reset_query(); ?>
     
     <!--end posts-->
@@ -107,7 +137,7 @@ the_post_thumbnail("medium");
   </div>
 </section>
 
-<section role="main" class="site-content gallery">
+<!--<section role="main" class="site-content gallery">
 
   <div class="grid-row col-4">
       <div class="grid-unit gallery-image"><img src="<?php bloginfo('template_url'); ?>/img/gallery_1.jpg" />
@@ -126,13 +156,19 @@ the_post_thumbnail("medium");
      
    </div>
  
+</section>-->
+<section class="socialfeed">
+
+    <div id="instgram" class="instagramfeed"><ul id="instafeed"></ul></div>
+    <div id="twitter" class="twitterfeed"></div>
+
 </section>
 
-<section role="main" class="site-content testimonials">
+<!--<section role="main" class="site-content testimonials">
   <div class="container">
-<?php do_action( 'woothemes_testimonials', array( 'limit' => 3, 'display_author' => true, 'category' => 5) ); ?>
-  </div>
-</section>
+<?php /*?><?php do_action( 'woothemes_testimonials', array( 'limit' => 3, 'display_author' => true, 'category' => 5) ); ?>
+<?php */?>  </div>
+</section>-->
 
 <?php get_footer(); ?>
 <script>

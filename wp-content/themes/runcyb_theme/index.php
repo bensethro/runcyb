@@ -5,13 +5,27 @@ Template Name: news
 
 get_header(); ?>
 
+<section role="main" class="site-content pushdown">
+  <div class="container">
+    <div class="grid-row col-1">
+      <div class="grid-unit">
+     <h1>Latest News</h1>
+
+      </div>
+    </div>
+  </div>
+  
+  
+</section>
+
+
 
 
 <section role="main" class="site-content latest">
   <div class="container">
   <div class="grid-row col-4">
 
-   <h1>News</h1>
+  
     <?php if (have_posts()) :?>
     <?php while (have_posts()): the_post(); ?>
     
@@ -56,5 +70,11 @@ the_post_thumbnail("medium");
 </div>
 
   </div>
+</section>
+<section class="socialfeed">
+
+    <div id="instgram" class="instagramfeed"><ul id="instafeed"></ul></div>
+    <div id="twitter" class="twitterfeed"></div>
+
 </section>
 <?php get_footer(); ?>

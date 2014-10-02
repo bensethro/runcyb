@@ -1,13 +1,13 @@
 <?php
 /*
 Template Name: shop
-MultiEdit: intro,Promo,brands
+MultiEdit: demopromo,brands
 */
 ?>
 <?php get_header(); ?>
 
 
-<section id="hpslider">
+<section id="hpslider" >
   <div class="flexslider">
     <ul class="slides">
       <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_shop.jpg" />
@@ -24,6 +24,7 @@ MultiEdit: intro,Promo,brands
            <h1>Run. trail running shop </h1>
             <h2>Stocked with leading brands. Footwear, Apperal & Accessories</h2>
           </div>
+          
         </div>
       </li>
       
@@ -35,7 +36,7 @@ MultiEdit: intro,Promo,brands
 </section>
 
 
-<section role="main" class="site-content gallery">
+<section role="main" class="site-content gallery line-shop">
 
   <div class="grid-row col-4">
       <div class="grid-unit gallery-image"><img src="<?php bloginfo('template_url'); ?>/img/gallery_1.jpg" />
@@ -53,16 +54,25 @@ MultiEdit: intro,Promo,brands
    
      
    </div>
- 
+
 </section>
-<section role="main" class="site-content"><div class="brands"></div>
+<section role="main" class="site-content"> <div class="brands">brand logos here</div>
 </section>
 
 <section role="main" class="site-content intro">
   <div class="container">
     <div class="grid-row col-2">
       <div class="grid-unit ">
-        <?php multieditDisplay('intro'); ?>
+	  <?php if (have_posts()) : ?>
+        <?php while (have_posts()) : the_post(); ?> 
+      
+ 
+        <?php the_content(); ?>
+        
+         <?php wp_reset_query(); ?>
+        <?php endwhile; ?>
+<?php endif; ?> 
+<div class="bluebox"><p><?php echo strip_tags(multieditDisplay('demopromo', true)); ?></p><a href="+" class="button	">DEMO CENTER</a></div>
       </div>
       <div class="grid-unit">
       <img src="<?php bloginfo('template_url'); ?>/img/tempimages.png" />
@@ -111,10 +121,10 @@ MultiEdit: intro,Promo,brands
       
       <?php endwhile; ?>
     </div>
-    <?php
+        <div class="more"><?php
                 $category = get_the_category();
-                echo '<a href="'.get_category_link($category[0]->cat_ID).'" class=more>More' . '</a>';
-            ?>
+                echo '<a href="'.get_category_link($category[0]->cat_ID).'" >MORE</a>';?>
+                </div>
     <?php wp_reset_query(); ?>
     
     <!--end posts --> 

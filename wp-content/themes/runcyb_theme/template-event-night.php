@@ -1,29 +1,33 @@
 <?php
 /*
 Template Name: nighttrail
-MultiEdit: intro,Promo
+MultiEdit: intromessage,eventdate,eventregistration
 */
 ?>
 <?php get_header(); ?>
 
-<section id="hpslider">
+<section id="hpslider" class="line-nighttrail">
   <div class="flexslider">
     <ul class="slides">
-      <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_night.jpg" />
+     <!-- <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_night.jpg" />
         <div class="container">
           <div class="flex-caption">
             <h1>night event </h1>
             <p>Jill H - Liverpool</p>
           </div>
         </div>
-      </li>
+      </li>-->
       <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_night2.jpg" />
-        <div class="container">
-          <div class="flex-caption">
-            <h1>night event</h1>
-            <p>Rob E - London </p>
+        
+           <div class="flex-caption"> <div class="container">
+            <div class="grid-row col-2">
+      <div class="grid-unit"><img src="<?php bloginfo('template_url'); ?>/img/logo_nighttrail_wt.png" /></div>
+     
+      <div class="grid-unit"><h3><?php echo strip_tags(multieditDisplay('intromessage', true)); ?></h3>
+            </div></div>
           </div>
-        </div>
+          </div>
+      
       </li>
     </ul>
   </div>
@@ -32,28 +36,15 @@ MultiEdit: intro,Promo
 
 
 <article>
-<section role="main" class="site-content sponsors">
+<section role="main" class="site-content eventheader">
 
-  <div class="container">
+    <div class="container">
     <div class="grid-row col-2">
-      <div class="grid-unit left">
-        REGISTRATION OPENS IN 22 DAYS
+      <div class="grid-unit">
+        <h2><?php echo strip_tags(multieditDisplay('eventdate', true)); ?></h2>
       </div>
-      <div class="grid-unit right">
-      
-      <?php query_posts( '' ); ?>
-   
-      <?php if (have_posts()) :?>
-      <?php while (have_posts()): the_post(); ?>
-      
- 
-          <?php the_title()?>
-		  <?php the_post_thumbnail('event-logo'); ?>
-
- 
-    
-    
-      
+      <div class="grid-unit">
+       <h3><?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></h3><a href="+" class="register disabled">Register now</a>
       </div>
     </div>
   </div>
@@ -63,24 +54,24 @@ MultiEdit: intro,Promo
 <section role="main" class="site-content intro">
   <div class="container">
     <div class="grid-row col-2">
-      <div class="grid-unit left">
-        <?php the_content()?>
+      <div class="grid-unit">
+       <?php if (have_posts()) : ?>
+        <?php while (have_posts()) : the_post(); ?> 
+      
+        <h1><?php the_title(); ?></h1>
+        <?php the_content(); ?>
+        
+         <?php wp_reset_query(); ?>
+        <?php endwhile; ?>
+<?php endif; ?> 
       </div>
-      <div class="grid-unit right">
+      <div class="grid-unit">
         
       </div>
     </div>
   </div>
 </section>
-     <?php endwhile; ?>
-   
-    <?php wp_reset_query(); ?>
-    
-    
-    
-    <?php else : ?>
-    <?php endif; ?>
-    
+
  <section role="main" class="site-content latest">
   <div class="container">
     <?php query_posts( 'category_name=night trail&posts_per_page=4' ); ?>
@@ -102,13 +93,29 @@ the_post_thumbnail("medium");
           <p>
           <?php the_excerpt()?>
           </p>
+          <p class="category"> 
+		 <?php
+			$categories = get_the_category();
+
+			$output = '';
+			if($categories){
+				foreach($categories as $category) {
+					$output.='<span>'.$category->cat_name.'</span>';
+				}
+			echo trim($output);
+			}
+			?>
+</p>
+
       </a></div>
       <?php endwhile; ?>
     </div>
-    <br><span class="archivebutton"><?php
+    
+   
+    <div class="more"><?php
                 $category = get_the_category();
-                echo '<a href="'.get_category_link($category[0]->cat_ID).'" >View all posts for: ' . $category[0]->cat_name . '</a>';?>
-                </span>
+                echo '<a href="'.get_category_link($category[0]->cat_ID).'" >MORE</a>';?>
+                </div>
     <?php wp_reset_query(); ?>
     
     <!--end posts-->
@@ -121,7 +128,7 @@ the_post_thumbnail("medium");
   </div>
 </section>
 
-<section role="main" class="site-content gallery">
+<!--<section role="main" class="site-content gallery">
 
   <div class="grid-row col-4">
       <div class="grid-unit gallery-image"><img src="<?php bloginfo('template_url'); ?>/img/gallery_1.jpg" />
@@ -140,12 +147,18 @@ the_post_thumbnail("medium");
      
    </div>
  
+</section>-->
+<section class="socialfeed">
+
+    <div id="instgram" class="instagramfeed"><ul id="instafeed"></ul></div>
+    <div id="twitter" class="twitterfeed"></div>
+
 </section>
-<section role="main" class="site-content testimonials">
+<!--<section role="main" class="site-content testimonials">
   <div class="container">
-    <?php do_action( 'woothemes_testimonials', array( 'limit' => 3, 'display_author' => true, 'category' => 7) ); ?>
+    <?php /*?><?php do_action( 'woothemes_testimonials', array( 'limit' => 3, 'display_author' => true, 'category' => 7) ); ?><?php */?>
   </div>
-</section>
+</section>-->
 <?php get_footer(); ?>
 
 <script>

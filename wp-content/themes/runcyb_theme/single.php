@@ -6,10 +6,14 @@
 
 <section role="main">
 
-  <?php
-$src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 5600,1000 ), false, '' );
-?>
- <div style="background: url(<?php echo $src[0]; ?> ) !important;" class="feature" ></div>
+ 
+ <div class="feature" >
+ 
+ <?php 
+if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+	the_post_thumbnail('full');
+} 
+?></div>
 </section>
 
 
@@ -26,6 +30,21 @@ $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 560
         <h1>
           <?php the_title(); ?>
         </h1>
+             <p class="category"> 
+		 <?php
+			$categories = get_the_category();
+
+			$output = '';
+			if($categories){
+				foreach($categories as $category) {
+					$output.='<span>'.$category->cat_name.'</span>';
+				}
+			echo trim($output);
+			}
+			?>
+</p>
+
+
         <?php /*?><?php the_time('F js, Y') ?><?php */?>
         <?php the_content(); ?>
       
@@ -47,7 +66,7 @@ $src = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 560
              <div class="grid-row col-4">  
 			 
 <?php
-$args = array( 'posts_per_page' => 5, 'offset'=> 1 );
+$args = array( 'posts_per_page' => 4, 'offset'=> 1 );
 
 $myposts = get_posts( $args );
 foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
@@ -82,10 +101,20 @@ foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
        
         <?php endforeach; 
 wp_reset_postdata();?>
+  <div class="more"><?php
+                $category = get_the_category();
+                echo '<a href="'.get_category_link($category[0]->cat_ID).'" >MORE</a>';?>
+                </div>
       </div> </div>
       
-    </div>
+
   </div>
   <!-- .container --> 
+</section>
+<section class="socialfeed">
+
+    <div id="instgram" class="instagramfeed"><ul id="instafeed"></ul></div>
+    <div id="twitter" class="twitterfeed"></div>
+
 </section>
 <?php get_footer(); ?>

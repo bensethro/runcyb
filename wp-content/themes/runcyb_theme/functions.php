@@ -85,4 +85,24 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 100 );
 add_image_size( 'event-logo', 300, 100, true ); //  hard crop mode
 
 
+
+// /**
+//  * Add Twitter & Facebook Sharing Icon to Posts
+//  */
+// function gpp_social_buttons_below($content) {
+// 	global $post;
+// 	$permalink = get_permalink($post->ID);
+// 	$title = get_the_title();
+// 	if(!is_feed() && !is_home() && !is_page()) {
+// 		$content = $content . '<div class="social-links">
+// 	<a href="http://twitter.com/share" class="twitter-share-button" data-count="none" data-url="'.$permalink.'" data-text="'.$title.'">Tweet</a>
+// 	<div id="fb-root"></div><fb:like href="'.$permalink.'" layout="button_count" width="100" show_faces="false" font="">fbqwew</fb:like>
+// </div>';
+// 	}
+// 	return $content;
+// }
+// add_filter('the_content', 'gpp_social_buttons_below');
+
+
+
 ?>

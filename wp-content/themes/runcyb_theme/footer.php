@@ -2,13 +2,24 @@
 </div>
 
 <footer class="site-footer" role="contentinfo">
+<div class="footersocial"> 
+<div class="container">
+<h2>FOLLOW US FOR PRODUCTS OFFERS EVENTS AND REVIEWS </h2>
+<a href="mailto:mail@beicsbrenin.co.uk"><img src="<?php bloginfo('template_url'); ?>/img/icon_wt_facebook.png"/></a>
+<a href="mailto:mail@beicsbrenin.co.uk"><img src="<?php bloginfo('template_url'); ?>/img/icon_wt_twitter.png"/></a>
+<a href="mailto:mail@beicsbrenin.co.uk"><img src="<?php bloginfo('template_url'); ?>/img/icon_wt_instagram.png"/></a>
+ 
+    </div>
+</div>
 <div class="footertxt">
   <div class="container">
-    <p>&copy; Beics Brenin 2014 <span><a href="mailto:mail@beicsbrenin.co.uk">mail@beicsbrenin.co.uk</a></span> <span>01341 440728</span> <span>Open 9am - 5pm, 7 day a week</span> <span class="closed">(excluding Christmas Eve, Christmas Day, Boxing Day and New Year's Day)</span></p>
+    <p>&copy; Run. Coed y Brenin 2014 <span><a href="mailto:mail@beicsbrenin.co.uk">mail@beicsbrenin.co.uk</a></span> <span>01341 440728</span> <span>Open 9am - 5pm, 7 day a week</span> <span class="closed">(excluding Christmas Eve, Christmas Day, Boxing Day and New Year's Day)</span></p>
   </div>
 </div>
  
 </footer>
+<!-- <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+<script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script> -->
 
 <script src="<?php bloginfo('template_url'); ?>/js/fluidvids.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script> 
@@ -34,6 +45,8 @@
     });
   });
 </script>
+
+
 
 
 <!-- Instagram Feed -->

@@ -1,19 +1,19 @@
 <?php
 /*
 Template Name: Demo
-MultiEdit: Foundry,Green,Red,Black,Info,Quote
+MultiEdit: Info,Quote
 */
 ?>
 <?php get_header(); ?>
-<section role="main">
+<section role="main"  class="line-home">
 
-  <img src="<?php bloginfo('template_url'); ?>/img/trails_top.jpg" />
+  <img src="<?php bloginfo('template_url'); ?>/img/slide_demo.jpg" />
 
 </section>
-<section role="main" class="site-content pushdown">
+<section role="main" class="site-content">
   <div class="container">
     <div class="grid-row col-2">
-      <div class="grid-unit left">
+      <div class="grid-unit">
         <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
         <?php the_post_thumbnail(); ?>
@@ -24,14 +24,13 @@ MultiEdit: Foundry,Green,Red,Black,Info,Quote
        
 
       </div>
-      <div class="grid-unit right">
-        <aside class="boxgreen">
+      <div class="grid-unit">
+        <aside>
           <?php multieditDisplay('Info'); ?>
         </aside>
-        <aside class="boxgrey">
+        <aside>
           <?php multieditDisplay('Quote'); ?>
-        </aside>
-        <?php get_sidebar( 'posts' ); ?>
+    
       </div>
     </div>
   </div>

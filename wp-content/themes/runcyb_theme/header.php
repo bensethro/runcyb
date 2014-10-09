@@ -98,7 +98,7 @@ alert("Geocode was not successful for the following reason: " + status);
 <div id="wrap">
 <div id="main">
 <header id="site-header" class="site-header large">
-  <div class="container"><a href="<?php bloginfo('url');?>"><img src="<?php bloginfo('template_url');?>/img/logo_green.png" class="logo"/></a> <a class="toggle-menu" href="#"><img src="<?php bloginfo('template_url');?>/img/menu.png"/></a>
+  <div class="container"><a href="<?php bloginfo('url');?>" class="logo"></a> <a class="toggle-menu" href="#"><img src="<?php bloginfo('template_url');?>/img/menu.png"/></a>
     <nav role="navigation" > 
     
       

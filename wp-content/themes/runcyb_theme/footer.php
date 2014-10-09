@@ -13,7 +13,7 @@
 </div>
 <div class="footertxt">
   <div class="container">
-    <p>&copy; Run. Coed y Brenin 2014 <span><a href="mailto:mail@beicsbrenin.co.uk">mail@beicsbrenin.co.uk</a></span> <span>01341 440728</span> <span>Open 9am - 5pm, 7 day a week</span> <span class="closed">(excluding Christmas Eve, Christmas Day, Boxing Day and New Year's Day)</span></p>
+    <p>&copy; Run. Coed y Brenin 2014 01341 440728 - Open 9am - 5pm, 7 day a week (excluding Christmas Eve, Christmas Day, Boxing Day and New Year's Day)</p>
   </div>
 </div>
  

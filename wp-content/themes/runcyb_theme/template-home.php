@@ -11,7 +11,7 @@ MultiEdit: intro,promo
 <section id="hpslider" class="line-home">
   <div class="flexslider">
     <ul class="slides">
-      <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_runner2.jpg" class="fade-image"/>
+      <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_home.jpg" class="fade-image"/>
         <div class="container">
           <div class="flex-caption">
             <h1>Run. Coed y Brenin</h1>
@@ -19,15 +19,14 @@ MultiEdit: intro,promo
  </div>
         </div>
       </li>
-     <!-- <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_runner3.jpg" class="fade-image"/>
+   <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_home2.jpg" class="fade-image"/>
         <div class="container">
           <div class="flex-caption">
-            <h1>Way marked running Trails</h1>
-            <h2>CYB wooded awesomeness</h2>
-            <p><a href="">10k</a><a href="">Half Marathon</a><a href="">Full Marathon</a></p>
-          </div>
+            <h1>Run. Coed y Brenin</h1>
+            <h2>the UK’s first bespoke trail running centre.</h2>
+ </div>
         </div>
-      </li>-->
+      </li>
       
      
       
@@ -47,7 +46,7 @@ MultiEdit: intro,promo
       <div class="circle_container">
           <div class="circle">
           
-            <a href="/bike-hire" class="circle1">
+            <a href="<?php bloginfo('url');?>/shop" class="circle1">
          
           <h2>TRAIL RUNNING STORE</h2>
         
@@ -56,7 +55,7 @@ MultiEdit: intro,promo
       </div>  
       <div class="circle_container">
           <div class="circle">
-             <a href="/trails" class="circle2">
+             <a href="<?php bloginfo('url');?>/demo-centre" class="circle2">
          
           <h2>FOOTWEAR & PACK DEMO CENTRE</h2>
           
@@ -67,7 +66,7 @@ MultiEdit: intro,promo
       <div class="circle_container">
           <div class="circle">
           
-            <a href="/shop" class="circle3">
+            <a href="<?php bloginfo('url');?>/trails" class="circle3">
           <h2>COED Y BRENIN & THE WAYMARKED TRAILS</h2>
           
         </a>
@@ -97,36 +96,77 @@ MultiEdit: intro,promo
 <?php endif; ?> 
       </div>
 <div class="grid-unit events">
-      <h2>Run. Events</h2>
-  
-      
-      
-        <?php query_posts('id=13&orderby=rand&showposts=8'); ?>
-    
-      <?php if (have_posts()) :?>
-      <?php while (have_posts()): the_post(); ?>
-      
-      <!--start posts-->
-      
-   
-     	<a href="<?php the_permalink() ?>" class="event">
-     	<?php the_post_thumbnail("event-logo");?>
-        
-       
-       <h5><?php the_title()?></h5>
-       <p><?php the_excerpt()?></p>
+      <h4>Run. Events</h4>
 
-		</a>
-      <?php endwhile; ?>
-    
+      <?php 
+$args = array(
+    'post_type' => 'page', 
+    'name' => 'night-trail' 
+);
+$query = new WP_Query($args); 
+while($query -> have_posts()) : $query -> the_post(); ?> 
+        
+
+        <a href="<?php the_permalink(); ?>" class="event">
+          <div class="event-logo"><?php the_post_thumbnail("event-logo");?></div>
+           <div class="event-content"><h5><?php the_title(); ?></h5>
+        <p><?php echo strip_tags(multieditDisplay('intromessage', true)); ?></p>
+       <!--  <?php the_excerpt(); ?> -->
+
+        
+        <p><?php echo strip_tags(multieditDisplay('eventdate', true)); ?> | <?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></p>
+        </div>
+      </a>
    
+
+<?php endwhile; wp_reset_query(); //this is the most important function, this makes sure the the query resets so wordpress' loop can kick in ?>
+
+<?php 
+$args = array(
+    'post_type' => 'page', //make sure we only loop though pages
+    'name' => 'trail-marathon-wales' //get the page using the slug
+);
+$query = new WP_Query($args); //setup new query with our arguments defined
+while($query -> have_posts()) : $query -> the_post(); ?> 
+        
+  
+        <a href="<?php the_permalink(); ?>" class="event">
+          <div class="event-logo"><?php the_post_thumbnail("event-logo");?></div>
+          <div class="event-content"><h5><?php the_title(); ?></h5>
+        <p><?php echo strip_tags(multieditDisplay('intromessage', true)); ?></p>
+       <!--  <?php the_excerpt(); ?> -->
+
+        
+        <p><?php echo strip_tags(multieditDisplay('eventdate', true)); ?> | <?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></p>
+      </div>
+        </a>
+ 
+
+<?php endwhile; wp_reset_query(); //this is the most important function, this makes sure the the query resets so wordpress' loop can kick in ?>
+
+<?php 
+$args = array(
+    'post_type' => 'page', //make sure we only loop though pages
+    'name' => 'winter-trail' //get the page using the slug
+);
+$query = new WP_Query($args); //setup new query with our arguments defined
+while($query -> have_posts()) : $query -> the_post(); ?> 
+        
+    
+
+
+        <a href="<?php the_permalink(); ?>" class="event">
+          <div class="event-logo"><?php the_post_thumbnail("event-logo");?></div>
+           <div class="event-content"><h5> <?php the_title(); ?></h5>
+        <p><?php echo strip_tags(multieditDisplay('intromessage', true)); ?></p>
+       <!--  <?php the_excerpt(); ?> -->
+
+        
+        <p><?php echo strip_tags(multieditDisplay('eventdate', true)); ?> | <?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></p>
+        </div></a>
    
-    <?php wp_reset_query(); ?>
-    
-    <!--end posts-->
-    
-    <?php else : ?>
-    <?php endif; ?>
+
+<?php endwhile; wp_reset_query(); //this is the most important function, this makes sure the the query resets so wordpress' loop can kick in ?>
     
     
     </div>

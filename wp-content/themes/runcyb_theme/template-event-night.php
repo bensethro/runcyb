@@ -9,15 +9,20 @@ MultiEdit: intromessage,eventdate,eventregistration
 <section id="hpslider" class="line-nighttrail">
   <div class="flexslider">
     <ul class="slides">
-     <!-- <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_night.jpg" />
-        <div class="container">
-          <div class="flex-caption">
-            <h1>night event </h1>
-            <p>Jill H - Liverpool</p>
+    <li> 
+       <img src="<?php bloginfo('template_url'); ?>/img/slide_night.jpg" />
+        
+           <div class="flex-caption"> <div class="container">
+            <div class="grid-row col-2">
+      <div class="grid-unit"><img src="<?php bloginfo('template_url'); ?>/img/logo_nighttrail_wt.png" /></div>
+     
+      <div class="grid-unit"><h3><?php echo strip_tags(multieditDisplay('intromessage', true)); ?></h3>
+            </div></div>
           </div>
-        </div>
-      </li>-->
-      <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_night2.jpg" />
+          </div>
+      </li>
+      <li> 
+        <img src="<?php bloginfo('template_url'); ?>/img/slide_night2.jpg" />
         
            <div class="flex-caption"> <div class="container">
             <div class="grid-row col-2">

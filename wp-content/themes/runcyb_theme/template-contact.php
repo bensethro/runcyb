@@ -1,32 +1,36 @@
 <?php
 /*
-Template Name: Get in touch
-MultiEdit: Info
+Template Name: Contact
+
 */
 ?>
 
 <?php get_header(); ?>
 
 
+<section role="main"  class="line-home">
 
+  <img src="<?php bloginfo('template_url'); ?>/img/slide_trails.jpg" />
 
+</section>
 
-
-
-
-<section id=""><div id="map_canvas"></div></section>
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 <section role="main" class="site-content">
   <div class="container">
     <div class="grid-row col-2">
-      <div class="grid-unit left">
+      <div class="grid-unit">
+        <?php if (have_posts()) : ?>
+        <?php while (have_posts()) : the_post(); ?>
+        <?php the_post_thumbnail(); ?>
         <h1>
           <?php the_title(); ?>
         </h1>
-        <p>
-          <?php the_content(); ?>
-        </p>
-        <div id="formcontainer">
+        <?php the_content(); ?>
+       
+
+      </div>
+      <div class="grid-unit">
+        
+     <div id="formcontainer">
           <form id="contactForm" action="<?php bloginfo('template_url'); ?>/includes/processForm.php" method="post">
             <div class="grid-unit contact">
               <input type="text" name="senderName" id="senderName" placeholder="Name" required="required" maxlength="40" />
@@ -53,17 +57,26 @@ MultiEdit: Info
             <p>Please complete all the fields in the form before sending.</p>
           </div>
         </div>
-      </div>
-      <div class="grid-unit right">
-        <aside class="boxgrey">
-        <?php multieditDisplay('Info'); ?>
-       
-        </aside>
+
+
+
       </div>
     </div>
   </div>
+  <!-- .container --> 
 </section>
 <?php endwhile; ?>
 <?php endif; ?>
+<?php get_footer(); ?>
+
+
+
+
+
+
+
+<section id=""><div id="map_canvas"></div></section>
+
+
 
 <?php get_footer(); ?>

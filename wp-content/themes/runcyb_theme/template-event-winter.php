@@ -10,15 +10,23 @@ MultiEdit: intromessage,eventdate,eventregistration
 <section id="hpslider" class="line-wintertrail">
   <div class="flexslider">
     <ul class="slides">
-     <!-- <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_winter.jpg" />
-        <div class="container">
-          <div class="flex-caption">
-            <h1>winter event
-            </h1>
-            <p>Jill H - Liverpool</p>
+       <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_winter.jpg" />
+      
+       
+        
+    
+      
+      <div class="flex-caption"> <div class="container">
+            <div class="grid-row col-2">
+      <div class="grid-unit"><img src="<?php bloginfo('template_url'); ?>/img/logo_wintertrail_wt.png" /></div>
+     
+      <div class="grid-unit"><h3><?php echo strip_tags(multieditDisplay('intromessage', true)); ?></h3>
+            </div></div>
           </div>
-        </div>
-      </li>-->
+          </div>
+      
+       </li>
+     
       <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_winter2.jpg" />
       
        

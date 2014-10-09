@@ -6,22 +6,27 @@ MultiEdit: intromessage,eventdate,eventregistration
 ?>
 <?php get_header(); ?>
 
-<section id="hpslider" class="line-nighttrail">
+<section id="hpslider" class="line-tmw">
   <div class="flexslider">
     <ul class="slides">
-     <!-- <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_night.jpg" />
-        <div class="container">
-          <div class="flex-caption">
-            <h1>night event </h1>
-            <p>Jill H - Liverpool</p>
-          </div>
-        </div>
-      </li>-->
-      <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_night2.jpg" />
+     
+      <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_tmw.jpg" />
         
            <div class="flex-caption"> <div class="container">
             <div class="grid-row col-2">
-      <div class="grid-unit"><img src="<?php bloginfo('template_url'); ?>/img/logo_nighttrail_wt.png" /></div>
+      <div class="grid-unit"><img src="<?php bloginfo('template_url'); ?>/img/logo_tmw_wt.png" /></div>
+     
+      <div class="grid-unit"><h3><?php echo strip_tags(multieditDisplay('intromessage', true)); ?></h3>
+            </div></div>
+          </div>
+          </div>
+      
+      </li>
+      <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_tmw2.jpg" />
+        
+           <div class="flex-caption"> <div class="container">
+            <div class="grid-row col-2">
+      <div class="grid-unit"><img src="<?php bloginfo('template_url'); ?>/img/logo_tmw_wt.png" /></div>
      
       <div class="grid-unit"><h3><?php echo strip_tags(multieditDisplay('intromessage', true)); ?></h3>
             </div></div>
@@ -74,7 +79,7 @@ MultiEdit: intromessage,eventdate,eventregistration
 
  <section role="main" class="site-content latest">
   <div class="container">
-    <?php query_posts( 'category_name=night trail&posts_per_page=4' ); ?>
+    <?php query_posts( 'category_name=trail marathon wales &posts_per_page=4' ); ?>
     <div class="grid-row col-4">
       <?php if (have_posts()) :?>
       <?php while (have_posts()): the_post(); ?>

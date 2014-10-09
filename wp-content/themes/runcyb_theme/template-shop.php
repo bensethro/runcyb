@@ -56,7 +56,7 @@ MultiEdit: demopromo,brands
    </div>
 
 </section>
-<section role="main" class="site-content"> <div class="brands">brand logos here</div>
+<section role="main" class="site-content"> <div class="brands"><img src="<?php bloginfo('template_url'); ?>/img/logo-comp.png"></div>
 </section>
 
 <section role="main" class="site-content intro">

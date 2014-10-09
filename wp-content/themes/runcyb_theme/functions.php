@@ -12,21 +12,17 @@ add_action( 'init', 'register_my_menus' );
 
 add_theme_support( 'post-thumbnails' );
 
-if ( function_exists( 'add_image_size' ) ) { 
-	//add_image_size( 'portfolio-thumb', 800, 600, true );
-	//add_image_size( 'homepage-thumb', 220, 180, true ); //(cropped)
-}
-
 
 
 if ( function_exists( 'add_theme_support' ) ) {
 	add_theme_support( 'post-thumbnails' );
-        set_post_thumbnail_size( 800, 600 ); // default Post Thumbnail dimensions   
+        set_post_thumbnail_size( 800, 400 ); // default Post Thumbnail dimensions   
 }
 
 if ( function_exists( 'add_image_size' ) ) { 
-	add_image_size( 'featureimage', 1000, 9999 ); //300 pixels wide (and unlimited height)
-	add_image_size( 'listingthumb', 300, 200, true ); //(cropped)
+	add_image_size( 'featureimage', 1000, 9999 ); 
+	add_image_size( 'event-logo', 400, 100 ); 
+	
 }
 
 if (function_exists('register_sidebar')) {
@@ -82,7 +78,7 @@ function custom_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'custom_excerpt_length', 100 );
 
 
-add_image_size( 'event-logo', 300, 100, true ); //  hard crop mode
+
 
 
 

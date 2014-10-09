@@ -1,5 +1,10 @@
 <?php
 
+add_filter('excerpt_more', 'new_excerpt_more');
+function new_excerpt_more( $more ) {
+ return '...';
+}
+
 function register_my_menus() {
   register_nav_menus(
     array(
@@ -73,7 +78,7 @@ if (function_exists('register_sidebar')) {
 
 
 function custom_excerpt_length( $length ) {
-	return 20;
+	return 13;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 100 );
 

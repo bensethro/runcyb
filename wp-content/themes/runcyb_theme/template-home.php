@@ -6,80 +6,37 @@ MultiEdit: intro,promo
 ?>
 <?php get_header(); ?>
 
+<!-- Hero -->
 
-
-<section id="hpslider" class="line-home">
-  <div class="flexslider">
-    <ul class="slides">
-      <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_home.jpg" class="fade-image"/>
-        <div class="container">
-          <div class="flex-caption">
-            <h1>Run. Coed y Brenin</h1>
-            <h2>the UK’s first bespoke trail running centre.</h2>
- </div>
-        </div>
-      </li>
-   <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_home2.jpg" class="fade-image"/>
-        <div class="container">
-          <div class="flex-caption">
-            <h1>Run. Coed y Brenin</h1>
-            <h2>the UK’s first bespoke trail running centre.</h2>
- </div>
-        </div>
-      </li>
-      
-     
-      
-    </ul>
-  </div>
-  </div>
-</section>
-
-
-
-<section class="site-content site-banners">
-
-  <div class="container">
-  
-  
-  <div class="circles">  
-      <div class="circle_container">
-          <div class="circle">
-          
-            <a href="<?php bloginfo('url');?>/shop" class="circle1">
-         
-          <h2>TRAIL RUNNING STORE</h2>
-        
-        </a>
-          </div>
-      </div>  
-      <div class="circle_container">
-          <div class="circle">
-             <a href="<?php bloginfo('url');?>/demo-centre" class="circle2">
-         
-          <h2>FOOTWEAR & PACK DEMO CENTRE</h2>
-          
-        </a>
-            
-          </div>
-      </div> 
-      <div class="circle_container">
-          <div class="circle">
-          
-            <a href="<?php bloginfo('url');?>/trails" class="circle3">
-          <h2>COED Y BRENIN & THE WAYMARKED TRAILS</h2>
-          
-        </a>
-          </div>
-      </div>    
-   
+<div class="splash">
+  <h1>Run. Coed y Brenin</h1>
+  <div class="splash-img"></div>
+  <div class="splash-img-blur"></div>
 </div>
 
-
-
-
+<div class="circles">
+  <div class="container">
+    <div class="grid-row col-3">
+      <div class="grid-unit">   
+        <a href="<?php bloginfo('url');?>/shop" class="circle one">    
+          <h2>Trail Running <br/>Store</h2>
+        </a>
+      </div>  
+      <div class="grid-unit">    
+        <a href="<?php bloginfo('url');?>/demo-centre" class="circle two">
+          <h2>Footwear &amp; Pack <br/>Demo Centre</h2>
+        </a>    
+      </div> 
+      <div class="grid-unit"> 
+        <a href="<?php bloginfo('url');?>/trails" class="circle three">
+          <h2>The Waymarked <br/>Trails</h2>     
+        </a>    
+      </div>     
+    </div>
   </div>
-</section>
+</div>
+
+  
 
 <section role="main" class="site-content intro">
   <div class="container">
@@ -120,6 +77,8 @@ while($query -> have_posts()) : $query -> the_post(); ?>
    
 
 <?php endwhile; wp_reset_query(); //this is the most important function, this makes sure the the query resets so wordpress' loop can kick in ?>
+
+
 
 <?php 
 $args = array(
@@ -178,7 +137,7 @@ while($query -> have_posts()) : $query -> the_post(); ?>
 
 
 
-
+<!-- Posts -->
 
 <section role="main" class="site-content latest">
   <div class="container">
@@ -189,29 +148,26 @@ while($query -> have_posts()) : $query -> the_post(); ?>
       
       <!--start posts-->
       
-     <div class="grid-unit">
-     	<a href="<?php the_permalink() ?>" class="article-wrap">
-     	<?php the_post_thumbnail("medium");?>
-       
-       <h5><?php the_title()?></h5>
-       <p><?php the_excerpt()?></p>
+<div class="grid-unit article">
+  <a href="<?php the_permalink() ?>" class="image"><?php the_post_thumbnail("medium");?></a>
+  <h2><a href="<?php the_permalink() ?>"><?php the_title()?></a></h2>
+  <p><?php the_excerpt()?></p>
+  <p> 
+    <?php
+      $categories = get_the_category();
+      $separator = ' ';
+      $output = '';
+      if($categories){
+        foreach($categories as $category) {
+          $output .= '<span><a href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '">'.$category->cat_name.'</a></span>'.$separator;
+        }
+      echo trim($output, $separator);
+      }
+    ?>
+  </p>
+</div>
 
-		<p class="category"> 
-		 <?php
-			$categories = get_the_category();
 
-			$output = '';
-			if($categories){
-				foreach($categories as $category) {
-					$output.='<span>'.$category->cat_name.'</span>';
-				}
-			echo trim($output);
-			}
-			?>
-</p>
-
-</a>
-      </div>
       <?php endwhile; ?>
     </div>
      <div class="more"><?php

@@ -31,21 +31,22 @@
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/twitter.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/instafeed.min.js"></script>
 
-<!-- jQuery --> 
-<!--  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>
 
-<!-- FlexSlider --> 
-<script defer src="<?php bloginfo('template_url'); ?>/js/jquery.flexslider.js"></script> 
-<script type="text/javascript" charset="utf-8">
-  $(window).load(function() {
-    $('.flexslider').flexslider({
-          animation: "fade",  // slide or fade
-          controlsContainer: ".flex-container", // the container that holds the flexslider
-          controlNav: false 
-    });
-  });
+var offset;
+var scrollEnd = 200;
+function blurImage(amount){
+    $('.splash-img-blur').css({
+        opacity : amount
+    })
+}
+$(window).scroll( function(e) {
+    offset = $(window).scrollTop();
+    if(offset/scrollEnd < 1.5){
+        blurImage(offset/scrollEnd);
+    }
+});
 </script>
-
 
 
 

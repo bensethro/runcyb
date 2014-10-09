@@ -30,6 +30,7 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
  vertical-align: baseline;
  margin: 0;
  padding: 0;
+
 }
 table {
 	border-collapse: separate;
@@ -46,6 +47,7 @@ a img {
 /* Layout
 -------------------------------------------------------------- */
 
+
 body {
 	margin: 0!important;
 	font-size: 100%;
@@ -54,6 +56,7 @@ body {
 	position: relative;
 	height: 100%;
 	background: #FFF;
+	-webkit-font-smoothing: antialiased;
 }
 img, video {
 	width: auto;
@@ -75,7 +78,7 @@ img, video {
 }
 .grid-row {
 	width: 100%;
-	overflow: hidden;
+/*	overflow: hidden;*/
 }
 
 .grid-row.col-4 {
@@ -109,8 +112,8 @@ img, video {
 	height: 100%;
 }
 .grid-row.col-4 .grid-unit {
-	width: 23.5%;
-margin-right: 2%;
+	width: 22%;
+	margin-right: 4%;
 }
 .grid-row.col-4 .grid-unit:nth-child(4n+4) {
 		margin-right: 0;
@@ -138,9 +141,15 @@ margin-right: 2%;
 	transition: all 0.5s;
 	font-family: 'Oxygen', sans-serif;
 }
+
+.site-header .container {
+	width: 94%;
+	overflow: hidden;
+	max-width: none;
+}
 .site-header.large {
-	padding: 1% 0 1% 0;
-	border-bottom: solid #000 1px;/*	background-color:rgba(0,0,0,0.1);*/
+/*	padding: 1% 0 1% 0;*/
+/*	border-bottom: solid #000 1px;	background-color:rgba(0,0,0,0.1);*/
 
 }
 .site-header.small {
@@ -284,6 +293,53 @@ a:hover .logo {
 	margin-right: 10%;
 }
 
+
+/* Blurred Header
+-------------------------------------------------------------- */
+
+.splash,
+.splash-img,
+.splash-img-blur{
+  height:700px;
+  width: 100%;
+  overflow: auto;
+}
+.splash{
+    position: relative;
+}
+.splash-img, .splash-img-blur{
+  position: absolute;
+  top:0;
+  left:0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;  background-size: cover;
+
+}
+.splash-img{
+    background-image:url(http://robincwillis-blog.s3-website-us-east-1.amazonaws.com/demo/parallax/ex3/ex3a.jpg);
+}
+.splash-img-blur{
+    opacity: 0;
+    background-image:url(http://robincwillis-blog.s3-website-us-east-1.amazonaws.com/demo/parallax/ex3/ex3b.jpg);
+}
+
+.splash h1 {
+	z-index: 10;
+position: relative;
+color:#fff;
+font-size: 72px;
+margin: 0;
+margin-top:-36px;
+width: 100%;
+text-align: center;
+display: block;
+height:72px;
+line-height: 72px;
+top:50%;
+}
 
 
 /* Main Content Area
@@ -499,54 +555,64 @@ a:hover.register {
 /* Homepage Circle Banners
 -------------------------------------------------------------- */
 
-.circle_container {
-	float: left;
-	position: relative;
-	width: 22%;
-	margin: 6%;
-	z-index: 28;
+.circles {
+	width: 100%;
+	overflow: auto;
+	margin-top: -140px;
+	margin-bottom: 60px;
+	padding: 10px 0;
 }
-.circle_container:last-child {
-	margin-right: 0;
-}
+
 .circle {
-	margin-top: 100%
-}
-a.circle1, a.circle2, a.circle3 {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
 	background: #A8D024;
-	border-radius: 50%;
-	border: 2px solid #ffffff;
+	border-radius: 100%;
+	border: 4px solid #ffffff;
+	background: #11331B;
+	display: block;
+					box-sizing: border-box;
+  	 -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  width: 260px;
+  height: 260px;
+  margin: auto;
+  			  transition: all 0.2s ease-in-out;
+			 -o-transition: all 0.2s ease-in-out;
+		 -moz-transition: all 0.2s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;
 }
-a.circle1 {
-	background: #11331B url(img/homecircle_shop.jpg) no-repeat top;
+
+.circle.one { 
+	background: #A8D024 url(img/homecircle_shop.jpg) no-repeat top;
+	float: right; 
 }
-a.circle2 {
+
+.circle.two { 
 	background: #11331B url(img/homecircle_demo.jpg) no-repeat top;
 }
-a.circle3 {
-	background: #11331B url(img/homecircle_trails.jpg) no-repeat top;
+
+.circle.three { 
+	background: #11331B url(img/homecircle_trails.jpg) no-repeat top; 
+	float: left;
 }
-a:hover.circle1, a:hover.circle2, a:hover.circle3 {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: #A8D024;
-	border-radius: 50%;
+
+.circle:hover {
+	-webkit-transform: scale(1.05, 1.05);
 }
+
+.circle:hover h2 {
+	-webkit-transform: scale(1, 1);
+}
+
 .circle h2 {
 	color: #fff;
-	font-size: 17px;
-	margin: 40% 15px;
+	font-size: 18px;
+	text-transform: uppercase;
 	text-align: center;
-	font-weight:600;
+	font-weight: 700;
+	margin-top: 100px;
+	line-height: 1.3;
 }
+
 /* Shop template 
 -------------------------------------------------------------- */
 .brands {
@@ -655,10 +721,10 @@ p.att {
 a {
 	color: #93c01e;
 	text-decoration: none;
-	-webkit-transition: all 0.3s ease-in-out;
+/*	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;*/
 }
 a:hover {
 	/*color: #80bd01;*/
@@ -876,7 +942,7 @@ line-height: 140%;}
 	font-weight: 300;
 	color: #666666;
 	margin-right: 5px;
-	text-transform: uppercase;
+/*	text-transform: uppercase;*/
 	padding: 3px 6px;
 	border-radius: 3px;
 }
@@ -981,6 +1047,48 @@ img.alignright {
 }
 /* Post previews
 -------------------------------------------------------------- */
+
+.article {
+	margin-bottom: 80px;
+}
+
+.article h2 {
+	font-size: 22px;
+	margin: 20px 0 10px;
+	font-weight: 400;
+	letter-spacing: 0;
+}
+
+.article h2 a {
+	color: #121212;
+}
+
+.article p {
+		line-height: 1.5;
+}
+
+.article span {
+	font-weight: 700;
+	font-size: 12px;
+	margin-right: 2px;
+}
+
+.article span a {
+	color: #00B6EB;
+	border: 1px solid #ccc;
+	padding: 0 16px;
+	border-radius: 6px;
+	line-height: 28px;
+	display: inline-block;
+			    box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.article span a:hover {
+	text-decoration: underline;
+}
+
 a.article-wrap {
 	float: left;
 	border: solid #eeeeee 3px;
@@ -1003,13 +1111,13 @@ a:hover.article-wrap {
 	margin-bottom:3%;
 }
 .article-wrap span {
-	background: #fff;
+/*	background: #fff;
 	font-size: 12px;
 	font-weight: 300;
 	color: #000000;
 	margin-right: 5px;
 	text-transform: uppercase;
-	padding: 3px;
+	padding: 3px;*/
 }
 .article-wrap:hover span {
 	color: #000;
@@ -1433,6 +1541,22 @@ font-size: 14px;}
 -------------------------------------------------------------- */
 @media screen and (max-width: 929px) {
 
+.circles {
+	margin-top: -110px;
+}
+	.circle {
+		width: 200px;
+		height: 200px;
+	}
+
+	.circle h2 {
+		margin-top: 76px;
+		font-size: 16px;
+	}
+.col-3 .grid-unit {
+	width: 32%;
+	margin-right: 2%;
+}
 .site-banners{display:none;}
 .site-header, .site-header.large, .site-header.small {
 	padding: 10px 0 10px 0;
@@ -1549,6 +1673,18 @@ hr {
 	
 }
 
+}
+
+/* 930px
+-------------------------------------------------------------- */
+@media screen and (max-width: 700px) {
+
+	.circles {
+		display: none;	}
+.col-3 .grid-unit {
+	width: 100%;
+	margin-right: 0;
+}
 }
 
 /* Grid

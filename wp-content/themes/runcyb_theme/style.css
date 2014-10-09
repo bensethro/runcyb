@@ -655,10 +655,10 @@ p.att {
 a {
 	color: #93c01e;
 	text-decoration: none;
-	-webkit-transition: all 0.3s ease-in-out;
+	/*-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
-	transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;*/
 }
 a:hover {
 	/*color: #80bd01;*/

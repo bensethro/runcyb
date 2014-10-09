@@ -721,7 +721,11 @@ p.att {
 a {
 	color: #93c01e;
 	text-decoration: none;
+<<<<<<< HEAD
 /*	-webkit-transition: all 0.3s ease-in-out;
+=======
+	/*-webkit-transition: all 0.3s ease-in-out;
+>>>>>>> FETCH_HEAD
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;*/
@@ -1031,10 +1035,18 @@ margin-bottom:2%;
 
 .feature {
   
-	height: 700px;
+	margin-top:110px;
+	height: 100%;
 	width: 100%;
 	background-size: cover;
-	overflow:hidden;display:block;
+	overflow:hidden;
+	display:block;
+
+}
+.feature-narrow {
+  
+	margin-top:15%;
+	width: 100%;
 
 }
 img.alignleft {

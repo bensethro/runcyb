@@ -965,10 +965,18 @@ margin-bottom:2%;
 
 .feature {
   
-	height: 700px;
+	margin-top:110px;
+	height: 100%;
 	width: 100%;
 	background-size: cover;
-	overflow:hidden;display:block;
+	overflow:hidden;
+	display:block;
+
+}
+.feature-narrow {
+  
+	margin-top:15%;
+	width: 100%;
 
 }
 img.alignleft {

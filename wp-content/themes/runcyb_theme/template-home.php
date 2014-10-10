@@ -9,7 +9,10 @@ MultiEdit: intro,promo
 <!-- Hero -->
 
 <div class="splash">
-  <h1>Run. Coed y Brenin</h1>
+  <div class="splash-text">
+    <h2>Run. Coed y Brenin</h2>
+    <h1>the UK's first bespoke trail running centre.</h1>
+  </div>
   <div class="splash-img"></div>
   <div class="splash-img-blur"></div>
 </div>

@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2014 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="calendar" unicode="&#xe800;" d="m834 653q46-16 75-56t29-90l0-469q0-65-46-111t-111-46l-625 0q-65 0-110 46t-46 111l0 469q0 50 29 90t75 56l0 10q0 65 45 110t111 46 111-46 45-110l105 0q0 65 46 110t111 46 110-46 46-110l0-10z m-209 10l0-104q0-21 16-37t37-15 36 15 15 37l0 104q0 21-15 37t-36 15-37-15-16-37z m-416 0l0-104q0-21 15-37t36-15 37 15 16 37l0 104q0 21-16 37t-37 15-36-15-15-37z m625-625l0 312-730 0 0-312q0-21 15-37t37-16l625 0q22 0 37 16t16 37z" horiz-adv-x="938" />
+</font>
+</defs>
+</svg>

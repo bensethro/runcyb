@@ -17,7 +17,45 @@ MultiEdit: intro,promo
   <div class="splash-img-blur"></div>
 </div>
 
-<div class="circles">
+<!-- Boxes -->
+
+<section class="homeboxes">
+  <div class="container">
+    <div class="grid-row col-3">
+      <div class="grid-unit homebox">
+        <figure>
+          <h2>Shop</h2>
+          <img src="<?php bloginfo('template_url'); ?>/img/gallery_3.jpg" alt="img04">
+            <figcaption>
+              Some text here
+              <a href="">More</a>
+            </figcaption>
+          </figure>
+      </div>
+      <div class="grid-unit homebox">
+        <figure>
+          <h2>Shop</h2>
+          <img src="<?php bloginfo('template_url'); ?>/img/gallery_3.jpg" alt="img04">
+            <figcaption>
+              Some text here
+              <a href="">More</a>
+            </figcaption>
+          </figure>
+      </div>
+      <div class="grid-unit homebox">
+        <figure>
+          <h2>Shop</h2>
+          <img src="<?php bloginfo('template_url'); ?>/img/gallery_3.jpg" alt="img04">
+            <figcaption>
+              Some text here
+              <a href="">More</a>
+            </figcaption>
+          </figure>
+      </div>
+    </div>
+</section>
+
+<!-- <div class="circles">
   <div class="container">
     <div class="grid-row col-3">
       <div class="grid-unit">   
@@ -37,14 +75,19 @@ MultiEdit: intro,promo
       </div>     
     </div>
   </div>
-</div>
+</div> -->
 
   
 
 <section role="main" class="site-content intro">
   <div class="container">
     <div class="grid-row col-2">
-      <div class="grid-unit ">
+
+      <div class="grid-unit homeintro">
+      <div class="homeimage">
+        <img src="<?php bloginfo('template_url'); ?>/img/gallery_3.jpg" alt="img04">
+      </div>
+      <div class="hometext">
 	  <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?> 
       
@@ -54,84 +97,63 @@ MultiEdit: intro,promo
          <?php wp_reset_query(); ?>
         <?php endwhile; ?>
 <?php endif; ?> 
+</div>
       </div>
-<div class="grid-unit events">
-      <h4>Run. Events</h4>
+
+
+    <!-- Events -->
+
+    <div class="grid-unit events">
+      <h2>Run. Events</h2>
 
       <?php 
-$args = array(
-    'post_type' => 'page', 
-    'name' => 'night-trail' 
-);
-$query = new WP_Query($args); 
-while($query -> have_posts()) : $query -> the_post(); ?> 
-        
+        $args = array(
+        'post_type' => 'page', 
+        'name' => 'night-trail' 
+        );
+      $query = new WP_Query($args); 
+      while($query -> have_posts()) : $query -> the_post(); ?>         
+      <a href="<?php the_permalink(); ?>">
+        <div class="event-logo"><?php the_post_thumbnail("event-logo");?></div>
+        <div class="event-content">
+          <h4><?php the_title(); ?> on <span class="date"><?php echo strip_tags(multieditDisplay('eventdate', true)); ?></span></h4>
+          <p><?php echo strip_tags(multieditDisplay('intromessage', true)); ?>&nbsp;<span><?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></span></p>
+        </div>
+      </a>  
+      <?php endwhile; wp_reset_query(); //this is the most important function, this makes sure the the query resets so wordpress' loop can kick in ?>
 
-        <a href="<?php the_permalink(); ?>" class="event">
-          <div class="event-logo"><?php the_post_thumbnail("event-logo");?></div>
-           <div class="event-content"><h5><?php the_title(); ?></h5>
-        <p><?php echo strip_tags(multieditDisplay('intromessage', true)); ?></p>
-       <!--  <?php the_excerpt(); ?> -->
+      <?php 
+        $args = array(
+        'post_type' => 'page', 
+        'name' => 'trail-marathon-wales' 
+        );
+      $query = new WP_Query($args); 
+      while($query -> have_posts()) : $query -> the_post(); ?>     
+      <a href="<?php the_permalink(); ?>">
+        <div class="event-logo"><?php the_post_thumbnail("event-logo");?></div>
+        <div class="event-content">
+          <h4><?php the_title(); ?> on <span class="date"><?php echo strip_tags(multieditDisplay('eventdate', true)); ?></span></h4>
+          <p><?php echo strip_tags(multieditDisplay('intromessage', true)); ?>&nbsp;<span><?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></span></p>
+        </div>
+      </a>     
+      <?php endwhile; wp_reset_query(); //this is the most important function, this makes sure the the query resets so wordpress' loop can kick in ?>
 
-        
-        <p><?php echo strip_tags(multieditDisplay('eventdate', true)); ?> | <?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></p>
+      <?php 
+        $args = array(
+        'post_type' => 'page', 
+        'name' => 'winter-trail' 
+        );
+      $query = new WP_Query($args); 
+      while($query -> have_posts()) : $query -> the_post(); ?>  
+      <a href="<?php the_permalink(); ?>">
+        <div class="event-logo"><?php the_post_thumbnail("event-logo");?></div>
+        <div class="event-content">
+          <h4><?php the_title(); ?> on <span class="date"><?php echo strip_tags(multieditDisplay('eventdate', true)); ?></span></h4>
+          <p><?php echo strip_tags(multieditDisplay('intromessage', true)); ?>&nbsp;<span><?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></span></p>
         </div>
       </a>
-   
-
-<?php endwhile; wp_reset_query(); //this is the most important function, this makes sure the the query resets so wordpress' loop can kick in ?>
-
-
-
-<?php 
-$args = array(
-    'post_type' => 'page', //make sure we only loop though pages
-    'name' => 'trail-marathon-wales' //get the page using the slug
-);
-$query = new WP_Query($args); //setup new query with our arguments defined
-while($query -> have_posts()) : $query -> the_post(); ?> 
-        
-  
-        <a href="<?php the_permalink(); ?>" class="event">
-          <div class="event-logo"><?php the_post_thumbnail("event-logo");?></div>
-          <div class="event-content"><h5><?php the_title(); ?></h5>
-        <p><?php echo strip_tags(multieditDisplay('intromessage', true)); ?></p>
-       <!--  <?php the_excerpt(); ?> -->
-
-        
-        <p><?php echo strip_tags(multieditDisplay('eventdate', true)); ?> | <?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></p>
-      </div>
-        </a>
- 
-
-<?php endwhile; wp_reset_query(); //this is the most important function, this makes sure the the query resets so wordpress' loop can kick in ?>
-
-<?php 
-$args = array(
-    'post_type' => 'page', //make sure we only loop though pages
-    'name' => 'winter-trail' //get the page using the slug
-);
-$query = new WP_Query($args); //setup new query with our arguments defined
-while($query -> have_posts()) : $query -> the_post(); ?> 
-        
+      <?php endwhile; wp_reset_query(); //this is the most important function, this makes sure the the query resets so wordpress' loop can kick in ?>
     
-
-
-        <a href="<?php the_permalink(); ?>" class="event">
-          <div class="event-logo"><?php the_post_thumbnail("event-logo");?></div>
-           <div class="event-content"><h5> <?php the_title(); ?></h5>
-        <p><?php echo strip_tags(multieditDisplay('intromessage', true)); ?></p>
-       <!--  <?php the_excerpt(); ?> -->
-
-        
-        <p><?php echo strip_tags(multieditDisplay('eventdate', true)); ?> | <?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></p>
-        </div></a>
-   
-
-<?php endwhile; wp_reset_query(); //this is the most important function, this makes sure the the query resets so wordpress' loop can kick in ?>
-    
-    
-    </div>
     </div>
   </div>
 </section>	  
@@ -151,32 +173,32 @@ while($query -> have_posts()) : $query -> the_post(); ?>
       
       <!--start posts-->
       
-<div class="grid-unit article">
-  <a href="<?php the_permalink() ?>" class="image"><?php the_post_thumbnail("article-image");?></a>
-  <h2><a href="<?php the_permalink() ?>"><?php the_title()?></a></h2>
-  <p><?php //the_excerpt()?></p>
-  <p> 
-    <?php
-      $categories = get_the_category();
-      $separator = ' ';
-      $output = '';
-      if($categories){
-        foreach($categories as $category) {
-          $output .= '<span><a href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '">'.$category->cat_name.'</a></span>'.$separator;
-        }
-      echo trim($output, $separator);
-      }
-    ?>
-  </p>
-</div>
-
+      <div class="grid-unit article">
+        <a href="<?php the_permalink() ?>"><?php the_post_thumbnail("article-image");?></a>
+        <div class="categories">
+          <?php
+            $categories = get_the_category();
+            $separator = ' ';
+            $output = '';
+            if($categories){
+              foreach($categories as $category) {
+                $output .= '<span><a href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '">'.$category->cat_name.'</a></span>'.$separator;
+              }
+            echo trim($output, $separator);
+            }
+          ?>
+        </div>
+        <h2><a href="<?php the_permalink() ?>"><?php the_title()?></a></h2>
+      </div>
 
       <?php endwhile; ?>
+
     </div>
-     <div class="more"><?php
-                $category = get_the_category();
-                echo '<a href="'.get_category_link($category[0]->cat_ID).'" >MORE</a>';?>
-                </div>
+    <?php
+      $category = get_the_category();
+      echo '<a href="'.get_category_link($category[0]->cat_ID).'" class="morelink" >Read more</a>';
+    ?>
+
    
     <?php wp_reset_query(); ?>
     
@@ -193,7 +215,7 @@ while($query -> have_posts()) : $query -> the_post(); ?>
 
 <section class="socialfeed">
 
-    <div id="instgram" class="instagramfeed"><ul id="instafeed"></ul></div>
+   <!--  <div id="instagram" class="instagramfeed"><ul id="instafeed"></ul></div> -->
     <div id="twitter" class="twitterfeed"></div>
 
 </section>

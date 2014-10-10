@@ -30,6 +30,7 @@
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/twitterFetcher_min.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/twitter.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/instafeed.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/toucheffects.js"></script>
 
 <script>
 
@@ -55,9 +56,9 @@ $(window).scroll( function(e) {
 <script type="text/javascript">
   var feed = new Instafeed({
       get: 'tagged',
-      tagName: 'bmwz3',
+      tagName: 'coedybrenin',
       clientId: '8dab5fb6ee504fd9bbfce2a2302f6ea2',
-      limit: '13',
+      limit: '8',
       template: '<li><a href="{{link}}" target="_blank"><img src="{{image}}" /></a></li>'
   });
   feed.run();

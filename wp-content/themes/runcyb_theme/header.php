@@ -13,6 +13,8 @@
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">
 
 <link href='http://fonts.googleapis.com/css?family=Oxygen:700,300,400' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
 
 
 <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/favicon.png">
@@ -23,7 +25,20 @@
 <!--[if IE 8]><link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/ie.css"><![endif]-->
 <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
-
+<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/fontello.css">
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/animation.css"><!--[if IE 7]><link rel="stylesheet" href="css/fontello-ie7.css"><![endif]-->
+    <script>
+      function toggleCodes(on) {
+        var obj = document.getElementById('icons');
+        
+        if (on) {
+          obj.className += ' codesOn';
+        } else {
+          obj.className = obj.className.replace(' codesOn', '');
+        }
+      }
+      
+    </script>
 
 
 <script src="<?php bloginfo('template_url'); ?>/js/modernizr.custom.js"></script>

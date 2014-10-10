@@ -26,6 +26,7 @@ if ( function_exists( 'add_theme_support' ) ) {
 
 if ( function_exists( 'add_image_size' ) ) { 
 	add_image_size( 'featureimage', 1000, 9999 ); 
+	add_image_size( 'article-image', 800, 400, true); 
 	add_image_size( 'event-logo', 400, 100 ); 
 	
 }

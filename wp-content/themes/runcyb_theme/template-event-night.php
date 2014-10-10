@@ -39,17 +39,21 @@ MultiEdit: intromessage,eventdate,eventregistration
   </div>
 </section>
 
-
+ <?php if (have_posts()) : ?>
+        <?php while (have_posts()) : the_post(); ?> 
 <article>
-<section role="main" class="site-content eventheader">
+  <section role="main" class="site-content eventheader">
 
     <div class="container">
     <div class="grid-row col-2">
-      <div class="grid-unit">
-        <h2><?php echo strip_tags(multieditDisplay('eventdate', true)); ?></h2>
+      <div class="event-header-logo">
+           <?php the_post_thumbnail("event-logo");?>
       </div>
-      <div class="grid-unit">
-       <h3><?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></h3><a href="+" class="register disabled">Register now</a>
+      <div class="event-header-date">
+        <h3><?php echo strip_tags(multieditDisplay('eventdate', true)); ?></h3>
+      </div>
+      <div class="event-header-reg">
+       <h3><?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></h3>
       </div>
     </div>
   </div>
@@ -60,15 +64,11 @@ MultiEdit: intromessage,eventdate,eventregistration
   <div class="container">
     <div class="grid-row col-2">
       <div class="grid-unit">
-       <?php if (have_posts()) : ?>
-        <?php while (have_posts()) : the_post(); ?> 
+      
       
         <h1><?php the_title(); ?></h1>
         <?php the_content(); ?>
-        
-         <?php wp_reset_query(); ?>
-        <?php endwhile; ?>
-<?php endif; ?> 
+    
       </div>
       <div class="grid-unit">
         
@@ -76,7 +76,10 @@ MultiEdit: intromessage,eventdate,eventregistration
     </div>
   </div>
 </section>
-
+    
+         <?php wp_reset_query(); ?>
+        <?php endwhile; ?>
+<?php endif; ?> 
  <section role="main" class="site-content latest">
   <div class="container">
     <?php query_posts( 'category_name=night trail&posts_per_page=4' ); ?>

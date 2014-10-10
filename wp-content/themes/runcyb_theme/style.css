@@ -432,23 +432,36 @@ section {
 
 /* testimonials styles
 -------------------------------------------------------------- */
+.testimonials .quote{
+	float:left;
+	width:30%;
+	display:block;
+	text-align: center;
+	margin:1%;
+}
+
+}
 .testimonials blockquote {
 	margin: 0;
-}
-.testimonials blockquote:before {
-	color: #156834;
-	content: open-quote;
-	font-size: 80px;
-	line-height: 1em;
-	margin-bottom: 0px;
-	font-weight: 500;
-}
-.testimonials blockquote p {
-	margin: -40px 0 10px 0 !important;
 	font-size: 25px;
 	line-height: 30px;
 	color: #545c63;
 	font-weight: 500;
+}
+.testimonials blockquote p {
+	margin: 0;
+	font-size: 25px;
+	line-height: 30px;
+	color: #545c63;
+	font-weight: 500;
+}
+.testimonials .author  {
+	margin: 0;
+	font-size: 16px;
+	line-height: 120%;
+	color: #545c63;
+	font-weight: 300;
+	font-style:normal;
 }
 
 
@@ -463,6 +476,12 @@ section {
 	width: 100%;
 	background: #ffffff;
 }
+.eventheader{
+background: #ffffff;
+border-bottom: solid #A3A3A3 2px;
+}
+
+
 .fixed .eventheader{
 box-shadow: 0px 2px 5px 0 rgba(0,0,0,0.2);
 	border-bottom: solid #A3A3A3 1px;
@@ -501,8 +520,15 @@ box-shadow: 0px 2px 5px 0 rgba(0,0,0,0.2);
 	
 }
 .eventheader .event-header-reg{
-		width:30%;
-	float:left;
+		width:50%;
+	float:right;
+	display:block;
+	height:50px;
+	
+}
+.fixed .eventheader .event-header-reg{
+		width:40%;
+	float:right;
 	display:block;
 	height:50px;
 	
@@ -512,14 +538,16 @@ box-shadow: 0px 2px 5px 0 rgba(0,0,0,0.2);
 	font-size: 18px;
 	font-weight: 300;
 	float:left;
-	color:#666666;}
+	color:#666666;
+}
 
 
 .eventheader h3{
 	font-size: 20px;
 	font-weight: 700;
 	float:left;
-	color:#666666;}
+	color:#666666;
+}
 
 
 
@@ -560,7 +588,7 @@ a:hover.register {
 	border-radius: 4px!important;
 }
 
-.gid-unit {}
+
 /* Footer
 -------------------------------------------------------------- */
 
@@ -1277,6 +1305,7 @@ a:hover.article-wrap p {
 
 
 
+.ngg-gallery-thumbnail {width:20%!important;}
 
 /* Contact Page
 -------------------------------------------------------------- */

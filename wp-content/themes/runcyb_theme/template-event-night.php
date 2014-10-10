@@ -54,6 +54,17 @@ MultiEdit: intromessage,eventdate,eventregistration
       </div>
       <div class="event-header-reg">
        <h3><?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></h3>
+            <?php $register_button = get_post_meta($post->ID, 'register_button', true);
+if ($register_button) {
+?>
+<a href="<?php echo $register_button; ?>" class="register">Register Now</a>
+
+<?php } else { ?>
+
+
+
+<?php } ?>
+
       </div>
     </div>
   </div>

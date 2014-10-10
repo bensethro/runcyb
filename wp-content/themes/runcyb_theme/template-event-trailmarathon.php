@@ -55,6 +55,22 @@ MultiEdit: intromessage,eventdate,eventregistration
       </div>
       <div class="event-header-reg">
        <h3><?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></h3>
+
+    
+
+       <?php $register_button = get_post_meta($post->ID, 'register_button', true);
+if ($register_button) {
+?>
+<a href="<?php echo $register_button; ?>" class="register">Register Now</a>
+
+<?php } else { ?>
+
+
+
+<?php } ?>
+
+
+
       </div>
     </div>
   </div>
@@ -157,6 +173,9 @@ the_post_thumbnail("medium");
    </div>
  
 </section>-->
+<section role="main" class="site-content gallery">
+  <?php echo do_shortcode('[nggallery id=1 w=400 h=599]'); ?>
+</section>
 <section role="main" class="site-content testimonials">
   <div class="container">
   <?php do_action( 'woothemes_testimonials', array( 'limit' => 3, 'display_author' => true, 'category' => 10) ); ?>

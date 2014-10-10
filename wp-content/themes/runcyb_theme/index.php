@@ -66,7 +66,7 @@ the_post_thumbnail("large");
 <?php else :?>
      <div class="grid-unit"> <a href="<?php the_permalink() ?>" class=" article-wrap">
         <?php
-the_post_thumbnail("medium");
+the_post_thumbnail("article-image");
 ?>
        
         <h5>

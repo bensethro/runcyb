@@ -152,7 +152,7 @@ while($query -> have_posts()) : $query -> the_post(); ?>
       <!--start posts-->
       
 <div class="grid-unit article">
-  <a href="<?php the_permalink() ?>" class="image"><?php the_post_thumbnail("medium");?></a>
+  <a href="<?php the_permalink() ?>" class="image"><?php the_post_thumbnail("article-image");?></a>
   <h2><a href="<?php the_permalink() ?>"><?php the_title()?></a></h2>
   <p><?php //the_excerpt()?></p>
   <p> 

@@ -141,7 +141,7 @@ while($query -> have_posts()) : $query -> the_post(); ?>
 
 <section role="main" class="site-content latest">
   <div class="container">
-    <?php query_posts( 'posts_per_page=8' ); ?>
+    <?php query_posts( 'posts_per_page=4' ); ?>
     <div class="grid-row col-4">
       <?php if (have_posts()) :?>
       <?php while (have_posts()): the_post(); ?>
@@ -151,7 +151,7 @@ while($query -> have_posts()) : $query -> the_post(); ?>
 <div class="grid-unit article">
   <a href="<?php the_permalink() ?>" class="image"><?php the_post_thumbnail("medium");?></a>
   <h2><a href="<?php the_permalink() ?>"><?php the_title()?></a></h2>
-  <p><?php the_excerpt()?></p>
+  <p><?php //the_excerpt()?></p>
   <p> 
     <?php
       $categories = get_the_category();

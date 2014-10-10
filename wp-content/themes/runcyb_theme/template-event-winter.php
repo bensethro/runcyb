@@ -165,6 +165,11 @@ the_post_thumbnail("medium");
    </div>
  
 </section>-->
+<section role="main" class="site-content testimonials">
+  <div class="container">
+<?php do_action( 'woothemes_testimonials', array( 'limit' => 3, 'display_author' => true, 'category' => 6) ); ?>
+</div>
+</section>
 <section class="socialfeed">
 
     <div id="instgram" class="instagramfeed"><ul id="instafeed"></ul></div>
@@ -172,11 +177,7 @@ the_post_thumbnail("medium");
 
 </section>
 
-<!--<section role="main" class="site-content testimonials">
-  <div class="container">
-<?php /*?><?php do_action( 'woothemes_testimonials', array( 'limit' => 3, 'display_author' => true, 'category' => 5) ); ?>
-<?php */?>  </div>
-</section>-->
+
 
 <?php get_footer(); ?>
 <script>

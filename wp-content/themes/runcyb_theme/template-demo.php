@@ -36,6 +36,11 @@ MultiEdit: Info,Quote
   </div>
   <!-- .container --> 
 </section>
+<section role="main" class="site-content testimonials">
+  <div class="container">
+    <?php do_action( 'woothemes_testimonials', array( 'limit' => 3, 'display_author' => true, 'category' => 11) ); ?>
+  </div>
+</section>
 <?php endwhile; ?>
 <?php endif; ?>
 <?php get_footer(); ?>

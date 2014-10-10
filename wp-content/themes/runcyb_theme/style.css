@@ -1109,6 +1109,7 @@ a.article-wrap {
 	background: #eeeeee;
 	min-height: 400px;
 	padding: 8px;
+	width: 100%;
 }
 a:hover.article-wrap {
 	float: left;

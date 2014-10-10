@@ -100,4 +100,9 @@ while($query -> have_posts()) : $query -> the_post(); ?>
   
   
 </section>
+<section role="main" class="site-content testimonials">
+  <div class="container">
+  <?php do_action( 'woothemes_testimonials', array( 'limit' => 3, 'display_author' => true, 'category' => 12) ); ?>
+  </div>
+</section>
 <?php get_footer(); ?>

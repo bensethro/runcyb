@@ -16,8 +16,8 @@ MultiEdit: intromessage,eventdate,eventregistration
     </div>
 
   </div>
-  <div class="splash-img shop"></div>
-  <div class="splash-img-blur shop-blur"></div>
+  <div class="splash-img night"></div>
+  <div class="splash-img-blur night-blur"></div>
 </div>
 
 

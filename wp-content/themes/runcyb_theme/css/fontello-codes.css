@@ -1,2 +1,7 @@
 
 .icon-calendar:before { content: '\e800'; } /* '' */
+.icon-reply:before { content: '\e801'; } /* '' */
+.icon-reply-1:before { content: '\e802'; } /* '' */
+.icon-twitter-bird:before { content: '\e803'; } /* '' */
+.icon-instagram-filled:before { content: '\e804'; } /* '' */
+.icon-facebook:before { content: '\e805'; } /* '' */

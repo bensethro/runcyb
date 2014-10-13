@@ -85,7 +85,7 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 100 );
 
 
 
-
+add_filter('show_admin_bar', '__return_false');
 
 
 // /**

@@ -34,6 +34,9 @@ define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
 
+define(‘WP_HOME’,'http://192.168.1.66:8888');
+define(‘WP_SITEURL’,'http://192.168.1.66:8888');
+
 /**#@+
  * Authentication Unique Keys and Salts.
  *

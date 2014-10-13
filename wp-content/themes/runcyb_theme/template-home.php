@@ -55,29 +55,7 @@ MultiEdit: intro,promo
     </div>
 </section>
 
-<!-- <div class="circles">
-  <div class="container">
-    <div class="grid-row col-3">
-      <div class="grid-unit">   
-        <a href="<?php bloginfo('url');?>/shop" class="circle one">    
-          <h2>Trail Running <br/>Store</h2>
-        </a>
-      </div>  
-      <div class="grid-unit">    
-        <a href="<?php bloginfo('url');?>/demo-centre" class="circle two">
-          <h2>Footwear &amp; Pack <br/>Demo Centre</h2>
-        </a>    
-      </div> 
-      <div class="grid-unit"> 
-        <a href="<?php bloginfo('url');?>/trails" class="circle three">
-          <h2>The Waymarked <br/>Trails</h2>     
-        </a>    
-      </div>     
-    </div>
-  </div>
-</div> -->
-
-  
+<!-- Intro and Events -->
 
 <section role="main" class="site-content intro">
   <div class="container">

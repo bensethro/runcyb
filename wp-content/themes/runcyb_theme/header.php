@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' />
-<title><?php wp_title('|', true, 'right'); ?></title>
+<title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
 <meta name="description" content="Beics Brenin, Cycle Shop Coed Y Brenin" />
 <meta name="keywords" content="Beics Brenin, Beics Brenin Bike Shop, Bike Shop Coed Y Brenin, Bike Shop Wales, Mountain Bikes, Hire Bikes Coed Y Brenin, Bike Accessories, DYFI Enduro, howies DYFI Enduro, Coed Y Brenin Enduro" />
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">

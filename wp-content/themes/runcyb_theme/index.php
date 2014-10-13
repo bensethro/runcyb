@@ -50,46 +50,57 @@ the_post_thumbnail("large");
 </section>
 
 
-
-
-
-
-
-
-
-
 <section role="main" class="site-content latest">
   <div class="container">
-  <div class="grid-row col-4">
+    <div class="grid-row col-4">
+      <?php if (have_posts()) :?>
+      <?php while (have_posts()): the_post(); ?>
+      
+      <!--start posts-->
+      
+      <div class="grid-unit article">
+        <a href="<?php the_permalink() ?>"><?php the_post_thumbnail("article-image");?></a>
+        <div class="categories">
+          <?php
+            $categories = get_the_category();
+            $separator = ' ';
+            $output = '';
+            if($categories){
+              foreach($categories as $category) {
+                $output .= '<span><a href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '">'.$category->cat_name.'</a></span>'.$separator;
+              }
+            echo trim($output, $separator);
+            }
+          ?>
+        </div>
+        <h2><a href="<?php the_permalink() ?>"><?php the_title()?></a></h2>
+      </div>
 
-  
-<?php else :?>
-     <div class="grid-unit"> <a href="<?php the_permalink() ?>" class=" article-wrap">
-        <?php
-the_post_thumbnail("article-image");
-?>
-       
-        <h5>
-          <?php the_title()?>
-          </h5>
-          <p>
-          <?php the_excerpt()?>
-        
-        </p>
-        	<p class="category"> 
-		 <?php
-			$categories = get_the_category();
+      <?php endwhile; ?>
 
-			$output = '';
-			if($categories){
-				foreach($categories as $category) {
-					$output.='<span>'.$category->cat_name.'</span>';
-				}
-			echo trim($output);
-			}
-			?>
-</p>
-      </a></div>
+    </div>
+
+   
+    <?php wp_reset_query(); ?>
+    
+    <!--end posts-->
+    
+    <?php else : ?>
+    <?php endif; ?>
+    
+    <!-- .grid-row col-4 --> 
+    
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
 
 <?php endif;?>
 
@@ -98,13 +109,12 @@ the_post_thumbnail("article-image");
 
 <?php endif; ?>
 
-</div>
 
-  </div>
-</section>
+
+
 <section class="socialfeed">
 
-    <div id="instgram" class="instagramfeed"><ul id="instafeed"></ul></div>
+
     <div id="twitter" class="twitterfeed"></div>
 
 </section>

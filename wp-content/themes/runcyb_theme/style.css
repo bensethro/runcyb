@@ -461,6 +461,14 @@ div.shiftnav-wrap {
     /*background-image:url(img/home-blur.jpg);*/
 }
 
+.splash-img.shop{
+    background-image:url(img/slide_shop.jpg);
+}
+
+.splash-img-blur.shop-blur{
+    background-image:url(img/slide_shop.jpg);
+}
+
 .splash-text {
 	z-index: 10;
 	position: relative;
@@ -474,6 +482,36 @@ div.shiftnav-wrap {
 	height:72px;
 	line-height: 72px;
 	top:50%;
+}
+
+.splash-text.event-caption {
+	background: rgba(0,0,0,0.4);
+	overflow: hidden;
+	color: #fff;
+	padding: 40px 0;
+	height: 200px;
+	top: 60%;
+}
+
+.splash-text.event-caption img {
+	max-width: 370px;
+	float: right;
+}
+
+.splash-text.event-caption h3 {
+	color: #fff;
+	max-width: 370px;
+	font-size: 22px;
+	line-height: 1.8
+}
+
+.splash-text h1 {
+
+}
+
+.splash-text h2 {
+	color: #fff;
+	font-weight: 700;
 }
 
 /* Homepage Boxes
@@ -1198,7 +1236,7 @@ h1, h2, h3 {
 }
 h1 {
 	font-weight: 300;
-	font-size: 50px;
+	font-size: 48px;
 	line-height: 50px;
 	margin: 20px 0 20px 0;
 	color: #fff;

@@ -7,14 +7,23 @@ MultiEdit: demopromo,brands
 <?php get_header(); ?>
 
 
-<section id="hpslider" >
+<div class="splash">
+  <div class="splash-text">
+    <h2>Run. trail running shop</h2>
+    <h1>Stocked with leading brands. Footwear, Apperal &amp; Accessories</h1>
+  </div>
+  <div class="splash-img shop"></div>
+  <div class="splash-img-blur shop-blur"></div>
+</div>
+
+<!-- <section id="hpslider" >
   <div class="flexslider">
     <ul class="slides">
       <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_shop.jpg" />
         <div class="container">
           <div class="flex-caption">
             <h1>Run. trail running shop </h1>
-            <h2>Stocked with leading brands. Footwear, Apperal & Accessories</h2>
+            <h2>Stocked with leading brands. Footwear, Apperal &amp; Accessories</h2>
           </div>
         </div>
       </li>
@@ -33,7 +42,7 @@ MultiEdit: demopromo,brands
     </ul>
   </div>
   </div>
-</section>
+</section> -->
 
 
 <section role="main" class="site-content gallery line-shop">
@@ -83,7 +92,7 @@ MultiEdit: demopromo,brands
 </section>	  
 
 	 
-
+<!-- Posts -->
 
 <section role="main" class="site-content latest">
   <div class="container">
@@ -94,40 +103,36 @@ MultiEdit: demopromo,brands
       
       <!--start posts-->
       
-       <div class="grid-unit">
-     	<a href="<?php the_permalink() ?>" class="article-wrap">
-     	<?php the_post_thumbnail("medium");?>
-       
-       <h5><?php the_title()?></h5>
-       <p><?php the_excerpt()?></p>
-
-		<p class="category"> 
-		 <?php
-			$categories = get_the_category();
-
-			$output = '';
-			if($categories){
-				foreach($categories as $category) {
-					$output.='<span>'.$category->cat_name.'</span>';
-				}
-			echo trim($output);
-			}
-			?>
-</p>
-
-</a>
+      <div class="grid-unit article">
+        <a href="<?php the_permalink() ?>"><?php the_post_thumbnail("article-image");?></a>
+        <div class="categories">
+          <?php
+            $categories = get_the_category();
+            $separator = ' ';
+            $output = '';
+            if($categories){
+              foreach($categories as $category) {
+                $output .= '<span><a href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '">'.$category->cat_name.'</a></span>'.$separator;
+              }
+            echo trim($output, $separator);
+            }
+          ?>
+        </div>
+        <h2><a href="<?php the_permalink() ?>"><?php the_title()?></a></h2>
       </div>
-      
-      
+
       <?php endwhile; ?>
+
     </div>
-        <div class="more"><?php
-                $category = get_the_category();
-                echo '<a href="'.get_category_link($category[0]->cat_ID).'" >MORE</a>';?>
-                </div>
+    <?php
+      $category = get_the_category();
+      echo '<a href="'.get_category_link($category[0]->cat_ID).'" class="morelink" >Read more</a>';
+    ?>
+
+   
     <?php wp_reset_query(); ?>
     
-    <!--end posts --> 
+    <!--end posts-->
     
     <?php else : ?>
     <?php endif; ?>
@@ -135,10 +140,7 @@ MultiEdit: demopromo,brands
     <!-- .grid-row col-4 --> 
     
   </div>
-</section>  
-
-
-
+</section>
 
 <section role="main" class="site-content testimonials">
   <div class="container">

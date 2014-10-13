@@ -16,33 +16,7 @@ MultiEdit: demopromo,brands
   <div class="splash-img-blur shop-blur"></div>
 </div>
 
-<!-- <section id="hpslider" >
-  <div class="flexslider">
-    <ul class="slides">
-      <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_shop.jpg" />
-        <div class="container">
-          <div class="flex-caption">
-            <h1>Run. trail running shop </h1>
-            <h2>Stocked with leading brands. Footwear, Apperal &amp; Accessories</h2>
-          </div>
-        </div>
-      </li>
-      <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_shop2.jpg" />
-        <div class="container">
-          <div class="flex-caption">
-           <h1>Run. trail running shop </h1>
-            <h2>Stocked with leading brands. Footwear, Apperal & Accessories</h2>
-          </div>
-          
-        </div>
-      </li>
-      
-     
-      
-    </ul>
-  </div>
-  </div>
-</section> -->
+
 
 
 <section role="main" class="site-content gallery line-shop">
@@ -65,7 +39,7 @@ MultiEdit: demopromo,brands
    </div>
 
 </section>
-<section role="main" class="site-content"> <div class="brands"><img src="<?php bloginfo('template_url'); ?>/img/logo-comp.png"></div>
+<section role="main"> <div class="brands"><img src="<?php bloginfo('template_url'); ?>/img/logo-comp.png"></div>
 </section>
 
 <section role="main" class="site-content intro">

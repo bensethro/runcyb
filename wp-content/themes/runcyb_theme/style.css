@@ -431,7 +431,7 @@ div.shiftnav-wrap {
 .splash,
 .splash-img,
 .splash-img-blur{
-  height:700px;
+  height:500px;
   width: 100%;
   overflow: auto;
 }
@@ -530,6 +530,8 @@ div.shiftnav-wrap {
 }
 
 .splash-text h1 {
+	color: #fff;
+	font-weight: 600;
 
 }
 
@@ -694,17 +696,18 @@ figure.cs-hover h2 {
 	border: none;
 	display: block;
 	float: left;
-<<<<<<< HEAD
-	border-top: solid 1px #ddd;
-=======
+
+	
+
 	border: 1px solid #fff;
->>>>>>> FETCH_HEAD
+
 	border-bottom: solid 1px #ddd;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
-	padding: 30px;
+	padding: 20px 20px;
 	color: #545c63;
+	border-radius: 2px;
 }
 /*.events a:hover {
 	width: 100%;
@@ -739,12 +742,16 @@ figure.cs-hover h2 {
 }
 
 .events .date {
-	font-weight: 700;
+	font-weight: 300;
+}
+.events h4 {
+	margin: 0;
 }
 
 .events p {
+	margin-top: 0;
 	margin-bottom: 0;
-	font-size: 14px;
+	font-size: 16px;
 }
 
 .events a.event p {
@@ -1280,9 +1287,10 @@ a:hover {
 /* Type
 -------------------------------------------------------------- */
 
-.intro h1, h2 {
+.intro h1, .intro h2 {
 	font-family: 'Raleway', sans-serif;
-	margin-bottom: 34px;
+	font-size: 34px;
+	line-height: 120%;
 	color: #121212;
 	margin-top: 0;
 }
@@ -1299,7 +1307,7 @@ h1 {
 	font-size: 48px;
 	line-height: 50px;
 	margin: 20px 0 20px 0;
-	color: #fff;
+	color: #121212;
 }
 
 h2 {

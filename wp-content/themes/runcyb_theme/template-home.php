@@ -24,14 +24,10 @@ MultiEdit: intro,promo,banner1,banner2,banner3
     <div class="grid-row col-3">
       <div class="grid-unit homebox">
         <figure>
-<<<<<<< HEAD
-          <h2>Shop</h2>
+          
+          <h2>Trail Running Store</h2>
           <img src="<?php bloginfo('template_url'); ?>/img/gallery_1.jpg" alt="img04">
-=======
-          <h2>TRAIL RUNNING 
-STORE</h2>
-          <img src="<?php bloginfo('template_url'); ?>/img/gallery_3.jpg" alt="img04">
->>>>>>> FETCH_HEAD
+
             <figcaption>
               <?php echo strip_tags(multieditDisplay('banner1', true)); ?>
               <a href="/shop">More</a>
@@ -40,13 +36,8 @@ STORE</h2>
       </div>
       <div class="grid-unit homebox">
         <figure>
-<<<<<<< HEAD
-          <h2>Shop</h2>
+          <h2>Demo Centre</h2>
           <img src="<?php bloginfo('template_url'); ?>/img/home-demo.jpg" alt="img04">
-=======
-          <h2>DEMO CENTRE</h2>
-          <img src="<?php bloginfo('template_url'); ?>/img/gallery_3.jpg" alt="img04">
->>>>>>> FETCH_HEAD
             <figcaption>
               <?php echo strip_tags(multieditDisplay('banner2', true)); ?>
               <a href="/demo-centre">More</a>
@@ -55,13 +46,9 @@ STORE</h2>
       </div>
       <div class="grid-unit homebox">
         <figure>
-<<<<<<< HEAD
-          <h2>Shop</h2>
+        <h2>Trail Network</h2>
           <img src="<?php bloginfo('template_url'); ?>/img/home-trails.jpg" alt="img04">
-=======
-          <h2>Trail Network</h2>
-          <img src="<?php bloginfo('template_url'); ?>/img/gallery_3.jpg" alt="img04">
->>>>>>> FETCH_HEAD
+  
             <figcaption>
               <?php echo strip_tags(multieditDisplay('banner3', true)); ?>
               <a href="/trails">More</a>
@@ -111,8 +98,7 @@ STORE</h2>
         <div class="event-logo"><?php the_post_thumbnail("event-logo");?></div>
         <div class="event-content">
           <h4><?php the_title(); ?> | <span class="date"><?php echo strip_tags(multieditDisplay('eventdate', true)); ?></span></h4>
-          <p><?php echo strip_tags(multieditDisplay('intromessage', true)); ?><br/>
-            <span><?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></span></p>
+          <p><?php echo strip_tags(multieditDisplay('intromessage', true)); ?></p>
         </div>
       </a>  
       <?php endwhile; wp_reset_query(); //this is the most important function, this makes sure the the query resets so wordpress' loop can kick in ?>
@@ -128,8 +114,7 @@ STORE</h2>
         <div class="event-logo"><?php the_post_thumbnail("event-logo");?></div>
         <div class="event-content">
           <h4><?php the_title(); ?> | <span class="date"><?php echo strip_tags(multieditDisplay('eventdate', true)); ?></span></h4>
-          <p><?php echo strip_tags(multieditDisplay('intromessage', true)); ?><br/>
-            <span><?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></span></p>
+          <p><?php echo strip_tags(multieditDisplay('intromessage', true)); ?></p>
         </div>
       </a>     
       <?php endwhile; wp_reset_query(); //this is the most important function, this makes sure the the query resets so wordpress' loop can kick in ?>
@@ -145,8 +130,7 @@ STORE</h2>
         <div class="event-logo"><?php the_post_thumbnail("event-logo");?></div>
         <div class="event-content">
           <h4><?php the_title(); ?> | <span class="date"><?php echo strip_tags(multieditDisplay('eventdate', true)); ?></span></h4>
-          <p><?php echo strip_tags(multieditDisplay('intromessage', true)); ?><br/>
-            <span><?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></span></p>
+          <p><?php echo strip_tags(multieditDisplay('intromessage', true)); ?></p>
         </div>
       </a>
       <?php endwhile; wp_reset_query(); //this is the most important function, this makes sure the the query resets so wordpress' loop can kick in ?>

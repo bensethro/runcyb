@@ -1,7 +1,7 @@
 <?php
 /*
 Template Name: Home
-MultiEdit: intro,promo
+MultiEdit: intro,promo,banner1,banner2,banner3
 */
 ?>
 <?php get_header(); ?>
@@ -24,31 +24,47 @@ MultiEdit: intro,promo
     <div class="grid-row col-3">
       <div class="grid-unit homebox">
         <figure>
+<<<<<<< HEAD
           <h2>Shop</h2>
           <img src="<?php bloginfo('template_url'); ?>/img/gallery_1.jpg" alt="img04">
+=======
+          <h2>TRAIL RUNNING 
+STORE</h2>
+          <img src="<?php bloginfo('template_url'); ?>/img/gallery_3.jpg" alt="img04">
+>>>>>>> FETCH_HEAD
             <figcaption>
-              Some text here
-              <a href="">More</a>
+              <?php echo strip_tags(multieditDisplay('banner1', true)); ?>
+              <a href="/shop">More</a>
             </figcaption>
           </figure>
       </div>
       <div class="grid-unit homebox">
         <figure>
+<<<<<<< HEAD
           <h2>Shop</h2>
           <img src="<?php bloginfo('template_url'); ?>/img/home-demo.jpg" alt="img04">
+=======
+          <h2>DEMO CENTRE</h2>
+          <img src="<?php bloginfo('template_url'); ?>/img/gallery_3.jpg" alt="img04">
+>>>>>>> FETCH_HEAD
             <figcaption>
-              Some text here
-              <a href="">More</a>
+              <?php echo strip_tags(multieditDisplay('banner2', true)); ?>
+              <a href="/demo-centre">More</a>
             </figcaption>
           </figure>
       </div>
       <div class="grid-unit homebox">
         <figure>
+<<<<<<< HEAD
           <h2>Shop</h2>
           <img src="<?php bloginfo('template_url'); ?>/img/home-trails.jpg" alt="img04">
+=======
+          <h2>Trail Network</h2>
+          <img src="<?php bloginfo('template_url'); ?>/img/gallery_3.jpg" alt="img04">
+>>>>>>> FETCH_HEAD
             <figcaption>
-              Some text here
-              <a href="">More</a>
+              <?php echo strip_tags(multieditDisplay('banner3', true)); ?>
+              <a href="/trails">More</a>
             </figcaption>
           </figure>
       </div>

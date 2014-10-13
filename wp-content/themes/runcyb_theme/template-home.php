@@ -19,7 +19,22 @@ MultiEdit: intro,promo,banner1,banner2,banner3
 
 <!-- Boxes -->
 
-<section class="homeboxes">
+<section class="homecircles">
+  <div class="container">
+    <div class="grid-row col-3">
+      <div class="grid-unit">
+        <a href="#" class="homecircle shop"><h2>Trail Running Store</h2></a>
+      </div>
+      <div class="grid-unit">
+        <a href="#" class="homecircle demo"><h2>Demo Centre</h2></a>
+      </div>
+      <div class="grid-unit">
+        <a href="#" class="homecircle trails"><h2>Trail Network</h2></a>
+      </div>
+    </div>
+</section>
+
+<!-- <section class="homeboxes">
   <div class="container">
     <div class="grid-row col-3">
       <div class="grid-unit homebox">
@@ -56,7 +71,7 @@ MultiEdit: intro,promo,banner1,banner2,banner3
           </figure>
       </div>
     </div>
-</section>
+</section> -->
 
 <!-- Intro and Events -->
 
@@ -156,6 +171,7 @@ MultiEdit: intro,promo,banner1,banner2,banner3
       
       <div class="grid-unit article">
         <a href="<?php the_permalink() ?>"><?php the_post_thumbnail("article-image");?></a>
+        <div class="headline">
         <div class="categories">
           <?php
             $categories = get_the_category();
@@ -170,6 +186,7 @@ MultiEdit: intro,promo,banner1,banner2,banner3
           ?>
         </div>
         <h2><a href="<?php the_permalink() ?>"><?php the_title()?></a></h2>
+        </div>
       </div>
 
       <?php endwhile; ?>

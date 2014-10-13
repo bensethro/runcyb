@@ -25,7 +25,7 @@ MultiEdit: intro,promo
       <div class="grid-unit homebox">
         <figure>
           <h2>Shop</h2>
-          <img src="<?php bloginfo('template_url'); ?>/img/gallery_3.jpg" alt="img04">
+          <img src="<?php bloginfo('template_url'); ?>/img/gallery_1.jpg" alt="img04">
             <figcaption>
               Some text here
               <a href="">More</a>
@@ -35,7 +35,7 @@ MultiEdit: intro,promo
       <div class="grid-unit homebox">
         <figure>
           <h2>Shop</h2>
-          <img src="<?php bloginfo('template_url'); ?>/img/gallery_3.jpg" alt="img04">
+          <img src="<?php bloginfo('template_url'); ?>/img/home-demo.jpg" alt="img04">
             <figcaption>
               Some text here
               <a href="">More</a>
@@ -45,7 +45,7 @@ MultiEdit: intro,promo
       <div class="grid-unit homebox">
         <figure>
           <h2>Shop</h2>
-          <img src="<?php bloginfo('template_url'); ?>/img/gallery_3.jpg" alt="img04">
+          <img src="<?php bloginfo('template_url'); ?>/img/home-trails.jpg" alt="img04">
             <figcaption>
               Some text here
               <a href="">More</a>
@@ -63,7 +63,7 @@ MultiEdit: intro,promo
 
       <div class="grid-unit homeintro">
       <div class="homeimage">
-        <img src="<?php bloginfo('template_url'); ?>/img/gallery_3.jpg" alt="img04">
+        <img src="<?php bloginfo('template_url'); ?>/img/home-intro.jpg" alt="img04">
       </div>
       <div class="hometext">
 	  <?php if (have_posts()) : ?>

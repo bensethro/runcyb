@@ -13856,6 +13856,39 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/themes\/runcyb_theme\/img\/home-demo.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 111447,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/runcyb_theme\/img\/home-demo.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/runcyb_theme\/img\/home-demo.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/runcyb_theme\/img\/home-intro.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 76790,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/runcyb_theme\/img\/home-intro.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/runcyb_theme\/img\/home-intro.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/runcyb_theme\/img\/home-trails.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 178812,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/runcyb_theme\/img\/home-trails.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/runcyb_theme\/img\/home-trails.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/themes\/runcyb_theme\/img\/home.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -14307,6 +14340,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/themes\/runcyb_theme\/img\/slide_night_blur.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 163098,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/runcyb_theme\/img\/slide_night_blur.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/runcyb_theme\/img\/slide_night_blur.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/themes\/runcyb_theme\/img\/slide_runner1.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -14362,6 +14406,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/wp-content\/themes\/runcyb_theme\/img\/slide_shop_blur.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 106008,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/runcyb_theme\/img\/slide_shop_blur.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/runcyb_theme\/img\/slide_shop_blur.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/wp-content\/themes\/runcyb_theme\/img\/slide_tmw.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -14380,6 +14435,17 @@
 		"initialSize": 122621,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/runcyb_theme\/img\/slide_tmw2.jpg",
 		"outputAbbreviatedPath": "\/wp-content\/themes\/runcyb_theme\/img\/slide_tmw2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/runcyb_theme\/img\/slide_tmw_blur.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 275990,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/runcyb_theme\/img\/slide_tmw_blur.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/runcyb_theme\/img\/slide_tmw_blur.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -14413,6 +14479,17 @@
 		"initialSize": 728096,
 		"inputAbbreviatedPath": "\/wp-content\/themes\/runcyb_theme\/img\/slide_winter2.jpg",
 		"outputAbbreviatedPath": "\/wp-content\/themes\/runcyb_theme\/img\/slide_winter2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/wp-content\/themes\/runcyb_theme\/img\/slide_winter_blur.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 179113,
+		"inputAbbreviatedPath": "\/wp-content\/themes\/runcyb_theme\/img\/slide_winter_blur.jpg",
+		"outputAbbreviatedPath": "\/wp-content\/themes\/runcyb_theme\/img\/slide_winter_blur.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

@@ -84,11 +84,11 @@ if ($register_button) {
 
 <section role="main" class="site-content intro">
   <div class="container">
-  <div class="grid-row col-4">
+  <div class="grid-row col-2">
     <div class="grid-unit">
     
       
-        <h1><?php the_title(); ?></h1>
+        <h2><?php the_title(); ?></h2 >
         <?php the_content(); ?>
         
      

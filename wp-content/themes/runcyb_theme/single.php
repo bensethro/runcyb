@@ -60,25 +60,22 @@ if ( has_post_thumbnail() ) {
         
 <section role="main" class="site-content latest">
   <div class="container">
-  
-  
-        <!--<h4>Archives</h4>-->
-             <div class="grid-row col-4">  
+    <div class="grid-row col-4">  
 			 
-<?php
-$args = array( 'posts_per_page' => 4, 'offset'=> 1 );
+    <?php
+      $args = array( 'posts_per_page' => 4, 'offset'=> 1 );
 
-$myposts = get_posts( $args );
-foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+    $myposts = get_posts( $args );
+    foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
  
-          <div class="grid-unit">
-          	<a href="<?php the_permalink() ?>" class="article-wrap">
+          <div class="grid-unit article">
+          	
      	<?php the_post_thumbnail("medium");?>
        
-       <h5><?php the_title()?></h5>
-       <p><?php the_excerpt()?></p>
+     <div class="headline">  
 
-		<p class="category"> 
+		
+          <div class="categories"> 
 		 <?php
 			$categories = get_the_category();
 
@@ -91,7 +88,16 @@ foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
 			}
 			?>
 </p>
-            </a></div>
+
+
+
+        <h2><a href="<?php the_permalink() ?>"><?php the_title()?></a></h2>
+       <p><?php the_excerpt()?></p>
+
+
+            </div>
+              </div>
+                </div>
             
 
       

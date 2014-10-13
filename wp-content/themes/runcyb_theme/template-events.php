@@ -39,14 +39,16 @@ while($query -> have_posts()) : $query -> the_post(); ?>
         
 
         <a href="<?php the_permalink(); ?>" class="event">
-          <?php the_post_thumbnail("event-logo");?>
+          <div class="event-logo"><?php the_post_thumbnail("event-logo");?></div>
+        <div class="event-content">
 
-          <h4><?php the_title(); ?></h4>
+          <h2><?php the_title(); ?></h2>
         <h5><?php echo strip_tags(multieditDisplay('intromessage', true)); ?></h5>
        <?php the_excerpt(); ?> 
 
         
         <p><?php echo strip_tags(multieditDisplay('eventdate', true)); ?> | <?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></p>
+      </div>
         </a>
    
 
@@ -62,12 +64,15 @@ while($query -> have_posts()) : $query -> the_post(); ?>
         
   
         <a href="<?php the_permalink(); ?>" class="event">
-          <h4><?php the_title(); ?></h4>
+          <div class="event-logo"><?php the_post_thumbnail("event-logo");?></div>
+        <div class="event-content">
+          <h2><?php the_title(); ?></h2>
         <h5><?php echo strip_tags(multieditDisplay('intromessage', true)); ?></h5>
        <?php the_excerpt(); ?> 
 
        
         <p><?php echo strip_tags(multieditDisplay('eventdate', true)); ?> | <?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></p>
+      </div>
         </a>
  
 
@@ -83,13 +88,14 @@ while($query -> have_posts()) : $query -> the_post(); ?>
         
     
         <a href="<?php the_permalink(); ?>" class="event">
-           <?php the_post_thumbnail("event-logo");?> <h4><?php the_title(); ?></h4>
+           <div class="event-logo"><?php the_post_thumbnail("event-logo");?></div>
+        <div class="event-content"><h2><?php the_title(); ?></h2>
         <h5><?php echo strip_tags(multieditDisplay('intromessage', true)); ?></h5>
       <?php the_excerpt(); ?>
 
        
         <p><?php echo strip_tags(multieditDisplay('eventdate', true)); ?> | <?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></p>
-        </a>
+      </div>  </a>
    
 
 <?php endwhile; wp_reset_query(); //this is the most important function, this makes sure the the query resets so wordpress' loop can kick in ?>

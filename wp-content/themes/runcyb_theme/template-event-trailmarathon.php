@@ -89,7 +89,9 @@ if ($register_button) {
       
       <div class="grid-unit article">
         <a href="<?php the_permalink() ?>"><?php the_post_thumbnail("article-image");?></a>
-        <div class="categories">
+        
+          <div class="headline">
+            <div class="categories">
           <?php
             $categories = get_the_category();
             $separator = ' ';
@@ -104,6 +106,7 @@ if ($register_button) {
         </div>
         <h2><a href="<?php the_permalink() ?>"><?php the_title()?></a></h2>
       </div>
+         </div>
 
       <?php endwhile; ?>
 

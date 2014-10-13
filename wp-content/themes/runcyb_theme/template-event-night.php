@@ -60,7 +60,7 @@ if ($register_button) {
       <div class="grid-unit">
       
       
-        <h1><?php the_title(); ?></h1>
+        <h2><?php the_title(); ?></h2>
         <?php the_content(); ?>
     
       </div>

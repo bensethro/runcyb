@@ -95,8 +95,9 @@ STORE</h2>
       <a href="<?php the_permalink(); ?>">
         <div class="event-logo"><?php the_post_thumbnail("event-logo");?></div>
         <div class="event-content">
-          <h4><?php the_title(); ?> on <span class="date"><?php echo strip_tags(multieditDisplay('eventdate', true)); ?></span></h4>
-          <p><?php echo strip_tags(multieditDisplay('intromessage', true)); ?>&nbsp;<span><?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></span></p>
+          <h4><?php the_title(); ?> | <span class="date"><?php echo strip_tags(multieditDisplay('eventdate', true)); ?></span></h4>
+          <p><?php echo strip_tags(multieditDisplay('intromessage', true)); ?><br/>
+            <span><?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></span></p>
         </div>
       </a>  
       <?php endwhile; wp_reset_query(); //this is the most important function, this makes sure the the query resets so wordpress' loop can kick in ?>
@@ -111,8 +112,9 @@ STORE</h2>
       <a href="<?php the_permalink(); ?>">
         <div class="event-logo"><?php the_post_thumbnail("event-logo");?></div>
         <div class="event-content">
-          <h4><?php the_title(); ?> on <span class="date"><?php echo strip_tags(multieditDisplay('eventdate', true)); ?></span></h4>
-          <p><?php echo strip_tags(multieditDisplay('intromessage', true)); ?>&nbsp;<span><?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></span></p>
+          <h4><?php the_title(); ?> | <span class="date"><?php echo strip_tags(multieditDisplay('eventdate', true)); ?></span></h4>
+          <p><?php echo strip_tags(multieditDisplay('intromessage', true)); ?><br/>
+            <span><?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></span></p>
         </div>
       </a>     
       <?php endwhile; wp_reset_query(); //this is the most important function, this makes sure the the query resets so wordpress' loop can kick in ?>
@@ -127,8 +129,9 @@ STORE</h2>
       <a href="<?php the_permalink(); ?>">
         <div class="event-logo"><?php the_post_thumbnail("event-logo");?></div>
         <div class="event-content">
-          <h4><?php the_title(); ?> on <span class="date"><?php echo strip_tags(multieditDisplay('eventdate', true)); ?></span></h4>
-          <p><?php echo strip_tags(multieditDisplay('intromessage', true)); ?>&nbsp;<span><?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></span></p>
+          <h4><?php the_title(); ?> | <span class="date"><?php echo strip_tags(multieditDisplay('eventdate', true)); ?></span></h4>
+          <p><?php echo strip_tags(multieditDisplay('intromessage', true)); ?><br/>
+            <span><?php echo strip_tags(multieditDisplay('eventregistration', true)); ?></span></p>
         </div>
       </a>
       <?php endwhile; wp_reset_query(); //this is the most important function, this makes sure the the query resets so wordpress' loop can kick in ?>

@@ -6,38 +6,19 @@ MultiEdit: intromessage,eventdate,eventregistration
 ?>
 <?php get_header(); ?>
 
-<section id="hpslider" class="line-tmw">
-  <div class="flexslider">
-    <ul class="slides">
-     
-      <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_tmw.jpg" />
-        
-           <div class="flex-caption"> <div class="container">
-            <div class="grid-row col-2">
-      <div class="grid-unit"><img src="<?php bloginfo('template_url'); ?>/img/logo_tmw_wt.png" /></div>
-     
-      <div class="grid-unit"><h3><?php echo strip_tags(multieditDisplay('intromessage', true)); ?></h3>
-            </div></div>
-          </div>
-          </div>
-      
-      </li>
-      <li> <img src="<?php bloginfo('template_url'); ?>/img/slide_tmw2.jpg" />
-        
-           <div class="flex-caption"> <div class="container">
-            <div class="grid-row col-2">
-      <div class="grid-unit"><img src="<?php bloginfo('template_url'); ?>/img/logo_tmw_wt.png" /></div>
-     
-      <div class="grid-unit"><h3><?php echo strip_tags(multieditDisplay('intromessage', true)); ?></h3>
-            </div></div>
-          </div>
-          </div>
-      
-      </li>
-    </ul>
+<div class="splash">
+  <div class="splash-text event-caption">
+    <div class="container">
+      <div class="grid-row col-2">
+        <div class="grid-unit"><img src="<?php bloginfo('template_url'); ?>/img/logo_tmw_wt.png" /></div>
+        <div class="grid-unit"><h3><?php echo strip_tags(multieditDisplay('intromessage', true)); ?></h3></div>
+      </div>
+    </div>
+
   </div>
-  </div>
-</section>
+  <div class="splash-img tmw"></div>
+  <div class="splash-img-blur tmw-blur"></div>
+</div>
 
 
   <?php if (have_posts()) : ?>
@@ -83,7 +64,7 @@ if ($register_button) {
       <div class="grid-unit">
        
       
-        <h1><?php the_title(); ?></h1>
+        <h2><?php the_title(); ?></h2>
         <?php the_content(); ?>
         
       
@@ -99,48 +80,40 @@ if ($register_button) {
 <?php endif; ?> 
  <section role="main" class="site-content latest">
   <div class="container">
-    <?php query_posts( 'category_name=trail marathon wales &posts_per_page=4' ); ?>
+    <?php query_posts( 'category_name=trail marathon wales&posts_per_page=4' ); ?>
     <div class="grid-row col-4">
       <?php if (have_posts()) :?>
       <?php while (have_posts()): the_post(); ?>
       
-      
       <!--start posts-->
       
-     <div class="grid-unit"> <a href="<?php the_permalink() ?>" class=" article-wrap">
-        <?php
-the_post_thumbnail("medium");
-?>
-       
-        <h5>
-          <?php the_title()?>
-          </h5>
-          <p>
-          <?php the_excerpt()?>
-          </p>
-          <p class="category"> 
-		 <?php
-			$categories = get_the_category();
+      <div class="grid-unit article">
+        <a href="<?php the_permalink() ?>"><?php the_post_thumbnail("article-image");?></a>
+        <div class="categories">
+          <?php
+            $categories = get_the_category();
+            $separator = ' ';
+            $output = '';
+            if($categories){
+              foreach($categories as $category) {
+                $output .= '<span><a href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '">'.$category->cat_name.'</a></span>'.$separator;
+              }
+            echo trim($output, $separator);
+            }
+          ?>
+        </div>
+        <h2><a href="<?php the_permalink() ?>"><?php the_title()?></a></h2>
+      </div>
 
-			$output = '';
-			if($categories){
-				foreach($categories as $category) {
-					$output.='<span>'.$category->cat_name.'</span>';
-				}
-			echo trim($output);
-			}
-			?>
-</p>
-
-      </a></div>
       <?php endwhile; ?>
+
     </div>
-    
+    <?php
+      $category = get_the_category();
+      echo '<a href="'.get_category_link($category[0]->cat_ID).'" class="morelink" >Read more</a>';
+    ?>
+
    
-    <div class="more"><?php
-                $category = get_the_category();
-                echo '<a href="'.get_category_link($category[0]->cat_ID).'" >MORE</a>';?>
-                </div>
     <?php wp_reset_query(); ?>
     
     <!--end posts-->
@@ -174,7 +147,7 @@ the_post_thumbnail("medium");
  
 </section>-->
 <section role="main" class="site-content gallery">
-  <?php echo do_shortcode('[nggallery id=1 w=400 h=599]'); ?>
+  <?php// echo do_shortcode('[nggallery id=1 w=400 h=599]'); ?>
 </section>
 <section role="main" class="site-content testimonials">
   <div class="container">
